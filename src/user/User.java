@@ -20,13 +20,13 @@ public class User {
     // 잔액 -
     private int myMoney;
 
-    public User(String name, String bankId, String bankPassword, int myMoney) {
+    public User(String name, String bankId, String bankPassword) {
         this.name = name;
         this.myAccount = new ArrayList<>();
         this.bankId = bankId;
         this.bankPassword = bankPassword;
         this.nowDate = LocalDate.now();
-        this.myMoney = myMoney;
+        this.myMoney = 0;
     }
 
     public String getName() {
