@@ -14,9 +14,10 @@
 			String depositAmountStr = input(">> ");
 			long depositAmount = Long.parseLong(depositAmountStr);
 			acc.setBalance(acc.getBalance() + depositAmount);
-			System.out.println("acc.getBalance() = " + acc.getBalance());
+			System.out.println("입금 후 잔액: " + acc.getBalance());
 		}
 
+		// 출금 메서드
 		public void withdrawalFromAccount () {
 			System.out.println("==========출금==========");
 			System.out.printf("# 출금할 금액을 입력하세요\n# 현재 잔액: %d\n", acc.getBalance());
