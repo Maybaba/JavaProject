@@ -7,7 +7,7 @@ public class UserInfoJW {
 
     // 매개변수로 받은 User의 정보를 보여주는 메서드
     public void userInfo(User user) {
-        System.out.println("========== 회원 정보 ==========");
+        System.out.println("\n========== 회원 정보 ==========");
         System.out.println("# 이름 : " + user.getName());
         System.out.println("# 아이디 : " + user.getBankId());
         System.out.println("# 가입일 : " + user.getNowDate());

@@ -12,7 +12,7 @@ public class BankController {
     public void startMenu () {
         User loginUser;
         while (true) {
-            System.out.println("========== SeSeSe Bank! ==========");
+            System.out.println("\n========== SeSeSe Bank! ==========");
             System.out.println("1. 회원가입");
             System.out.println("2. 로그인");
             System.out.println("3. 아이디 & 비밀번호 변경");
@@ -26,7 +26,9 @@ public class BankController {
                     break;
                 case "2":
                     loginUser = login.login();
+                    System.out.println(RegisterUserJW.getUsers());
                     mainMenu(loginUser);
+
                     break;
                 case "3":
                     fu.findUserInfo();
@@ -43,10 +45,11 @@ public class BankController {
 
     private void mainMenu(User user) {
         while (true) {
-            System.out.println("========== SeSeSe Bank! ==========");
+            System.out.println("\n========== SeSeSe Bank! ==========");
             System.out.println("# 1. 마이페이지");
             System.out.println("# 2. ...");
             System.out.println("# 3. 로그아웃");
+            System.out.println("=====================================");
             System.out.println("메뉴를 선택하세요.");
             String mainMenuNum = SimpleInput.input(">> ");
             switch (mainMenuNum) {

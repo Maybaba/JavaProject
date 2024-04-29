@@ -12,7 +12,7 @@ public class RegisterUserJW {
     }
 
     public void test () {
-        System.out.println("========== SeSeSe Bank! ==========");
+        System.out.println("\n========== SeSeSe Bank! ==========");
         System.out.println("1. 회원가입");
         System.out.println("2. 로그인");
         System.out.println("3. 프로그램 종료");
@@ -33,7 +33,7 @@ public class RegisterUserJW {
         String bankId;
         String bankPassword1;
         String userName;
-        System.out.println("========== 회원 가입 ==========");
+        System.out.println("\n========== 회원 가입 ==========");
         System.out.println("# 회원가입을 시작합니다.");
 
         while (true) {
@@ -83,9 +83,6 @@ public class RegisterUserJW {
         // Map<String, User>에 저장
         users.put(bankId, new User(userName, bankId, bankPassword1));
         System.out.printf("%s님의 회원가입이 완료되었습니다.\n", userName);
-
-        System.out.println(users.get(bankId));
-        System.out.println(users);
 
     }
 

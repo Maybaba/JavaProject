@@ -8,7 +8,7 @@ public class FindUserInfo {
 
     public void findUserInfo() {
         while (true) {
-            System.out.println("========== 아이디 & 비밀번호 찾기 ==========");
+            System.out.println("\n========== 아이디 & 비밀번호 찾기 ==========");
             System.out.println("# 1. 아이디 찾기");
             System.out.println("# 2. 비밀번호 찾기");
             System.out.println("# 3. << 이전 페이지");
@@ -29,7 +29,7 @@ public class FindUserInfo {
     }
 
     private void findId() {
-        System.out.println("이름을 입력하세요.");
+        System.out.println("\n이름을 입력하세요.");
         String inputName = SimpleInput.input(">> ");
         boolean isName = false;
         Map<String, User> users = RegisterUserJW.getUsers();
@@ -43,7 +43,7 @@ public class FindUserInfo {
     }
 
     private void findPassword () {
-        System.out.println("아이디를 입력하세요.");
+        System.out.println("\n아이디를 입력하세요.");
         String inputId = SimpleInput.input(">> ");
 
         Map<String, User> users = RegisterUserJW.getUsers();

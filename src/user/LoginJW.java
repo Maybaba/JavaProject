@@ -14,7 +14,7 @@ public class LoginJW {
         String inputId;
         // 아이디, 비밀번호 검증 반복문
         while(true) {
-            System.out.println("========== 로그인 ==========");
+            System.out.println("\n========== 로그인 ==========");
             System.out.println("# 로그인을 시작합니다.");
             System.out.print("# 아이디 : ");
             inputId = sc.nextLine();
