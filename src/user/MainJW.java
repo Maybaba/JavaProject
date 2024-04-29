@@ -1,25 +1,23 @@
 package user;
 
 
+import java.util.Scanner;
+
 public class MainJW {
 
     public static void main(String[] args) throws InterruptedException {
         RegisterUserJW test = new RegisterUserJW();
         LoginJW test2 = new LoginJW();
-        DepositWithdrawalHS test3 = new DepositWithdrawalHS();
         test.test();
         User user = test2.login();
         User testUser = RegisterUserJW.getUsers().get("qwe");
-        testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.FIXED));
-        testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.SAVING));
-        testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.TRANSFER));
-        System.out.println(testUser);
-//        createAccount(user);
+        testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.FIXED, "1"));
+        testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.SAVING, "1"));
+        testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.TRANSFER, "1"));
         System.out.println(user);
-        test3.acc = testUser.getMyAccount().get(0);
-        test3.user = testUser;
-        test3.run();
-        System.out.println(user);
+
+        DepositWithdrawalHS test3 = new DepositWithdrawalHS();
+        test3.run(testUser);
 
 
     }
