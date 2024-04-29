@@ -32,8 +32,7 @@ public class CreateAccountLJH extends Account  {
         System.out.println("=====================================\n");
     }
 
-// 입금 추가해서 넣기
-    //
+
 
 
     public static void createTransfer(User user) throws InterruptedException {
