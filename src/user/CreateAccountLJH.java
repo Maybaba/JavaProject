@@ -66,7 +66,7 @@ public class CreateAccountLJH extends Account  {
     public static void createSaving(User user) throws InterruptedException {
         // 계좌 잔액은 0으로 시작
         long balance = 0;
-
+////////
         // 계좌 비밀번호 생성
         int savingPassword = Integer.parseInt(input("사용하실 비밀번호를 입력해주세요.\n>>"));
         // 예금 계좌 생성
