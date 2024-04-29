@@ -3,12 +3,14 @@ package user;
 
 import java.time.LocalDate;
 
+import static user.CreateAccountLJH.generateAccountNumber;
+
 
 public class Account  {
 
     //field
     private AccountType accountType;
-    private int accountNum; //계좌번호
+    private String accountNum; //계좌번호
     private long balance;  // 계좌잔액
 //    private User user;  // 나의정보
     private LocalDate openAccountDate; // 날짜
@@ -16,8 +18,8 @@ public class Account  {
     private long singleTransferLimit;// 일회 이체 한도
     private int accountPassword; // 계좌 비번
 
-    public Account( long balance, User user, int accountPassword, AccountType type) {
-        this.accountNum = 1; //나중에 랜덤값
+    public Account( long balance, User user, int accountPassword, AccountType type, String accountNum) {
+        this.accountNum = generateAccountNumber(); //나중에 랜덤값
         this.balance = balance;
 //        this.user = user;
         this.openAccountDate = LocalDate.now();
@@ -26,11 +28,11 @@ public class Account  {
         this.accountType = type;
     }
 
-    public int getAccountNum() {
+    public String getAccountNum() {
         return accountNum;
     }
 
-    public void setAccountNum(int accountNum) {
+    public void setAccountNum(String accountNum) {
         this.accountNum = accountNum;
     }
 
