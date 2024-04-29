@@ -1,6 +1,5 @@
 package user;
 
-import static user.CreateAccountConLJH.createAccount;
 
 public class MainJW {
 
