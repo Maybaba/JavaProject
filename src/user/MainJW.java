@@ -14,7 +14,7 @@ public class MainJW {
         testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.TRANSFER));
         System.out.println(testUser);
 //        createAccount(user);
-//        System.out.println(user);
+        System.out.println(user);
 
 
     }
