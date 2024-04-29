@@ -31,6 +31,8 @@ public class UserInfoJW {
         }
         System.out.println("================");
         System.out.println("\n# 총 잔액 : " + totalBalance + "원");
+
+
     }
 
     public String accountType (AccountType type) {
