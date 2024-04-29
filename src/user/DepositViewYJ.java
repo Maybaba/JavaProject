@@ -58,7 +58,7 @@ class DepositViewYJ {
         //자동넘어감 방지 stop 하기 위한 코드
         Scanner s = new Scanner(System.in);
         //나의 적금 현황
-        System.out.println("나의 적금액 어쩌고 저쩌고 : balance");
+        System.out.println("나의 적금액 [] 나의 ㄱ");
         System.out.println(" 1. 적금계좌에 추가입금하기 ");
         System.out.println(" 0. 뒤로 가기 (나가기) ");
         String menuNum = input(" >>🧼 ");
