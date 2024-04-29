@@ -1,5 +1,5 @@
 package user;
-//TODO : 다음날로 넘어가기
+//TODO : 다음날로 넘어가는 기능
 public class DayAccountsYJ { //전체에서 적용되는 기능
     //필드
     static int dayAccount;

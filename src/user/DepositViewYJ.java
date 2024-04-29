@@ -54,8 +54,7 @@ class DepositViewYJ {
 
 
     private void viewSavingAccountStatus() {
-        DepositRepositoryYJ dr = new DepositRepositoryYJ(1000,1000);
-        dr.UserSavedAccount();
+        DepositRepositoryYJ dr = new DepositRepositoryYJ();
         //자동넘어감 방지 stop 하기 위한 코드
         Scanner s = new Scanner(System.in);
         //나의 적금 현황
