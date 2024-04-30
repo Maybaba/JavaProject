@@ -1,11 +1,11 @@
 package user;
 
 import static user.DayAccountsYJ.*;
-import static user.DayAccountsYJ.flagNextDay;
+import static user.AccountBalanceAccessorYJ.*;
 
 public class FixedAccountYJ {
     //다른 함수에서 참조해도 값 유지 위해 field -> static 으로 선언
-    private static long fixedBalance = getFixedBalance();
+    private static long fixedBalance = getFixedAccountBalance();
 
     //if fixed Account 코드
     public static void userFixedAccount(User testUser) {

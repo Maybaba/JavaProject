@@ -1,5 +1,5 @@
 package user;
-//TODO : 1. 다음날 넘김에 따른 카운트 진행  2. 이전날 = 다음날 boolean >> 계좌 이율 계산
+//TODO : 1. 다음날 넘김에 따른 이전날 / 다음날 개별 카운트 진행  2. 이전날 equals 다음날 boolean 값에 따른 예적금 계좌 이율 계산
 
 /**
  * 1. 다음날로 넘어가기 누르면 movetonextday 함수 호출됨

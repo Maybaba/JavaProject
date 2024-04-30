@@ -2,6 +2,7 @@ package user;
 
 import java.util.Scanner;
 
+import static user.AccountBalanceAccessorYJ.*;
 import static user.DayAccountsYJ.*;
 import static user.FixedAccountYJ.*;
 import static user.SavingAccountYJ.*;
@@ -65,7 +66,7 @@ class DepositViewYJ {
         System.out.printf("\n 🧼 ======== 마이적금 ==== sesese-bank와 [ %s일 째 ]======== 🧼 \n",dayAccount);
         for (Account a : testUser.getMyAccount() ) {
             if(a.getAccountType().equals(AccountType.SAVING)) {
-                System.out.printf("나의 적금계좌 잔액 [%d]원",getSavingBalance());
+                System.out.printf("나의 적금계좌 잔액 [%d]원", getSavingAccountBalance());
             }
 
         }
