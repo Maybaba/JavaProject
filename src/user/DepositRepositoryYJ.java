@@ -82,14 +82,14 @@ class DepositRepositoryYJ {
                             System.out.printf("3일이 지남에 따라 적금계좌에 %d 원이 자동이체 되었습니다. \n ", monthlySaveBalance);
                             System.out.printf(" 현재 적금계좌 잔액 [%d 원] \n", savingBalance);
 
-                        } else System.out.println("**입출금계좌에 잔액이 부족하여 자동이체 적금을 실패하였습니다.**");
+                        } else System.out.printf(" ⁉️입출금계좌에 잔액이 부족하여 자동이체 적금을 실패하였습니다. \n");
                     }
 
                 //if fixed Account 코드
             } else if (account.getAccountType().equals(AccountType.FIXED)) {
 
                 double fixedInterestRate = 0.05; //예금계좌 이자율 : 5%
-                //계좌가입시 받아오기
+                //계좌가입시 받아오는 코드
                 fixedBalance =  200; //account.getBalance();
                 //계좌잔액변경사항 업데이트
                 account.setBalance(fixedBalance);

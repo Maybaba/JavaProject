@@ -60,7 +60,9 @@ class DepositViewYJ {
 
         //나의 적금 현황
         System.out.printf("🎏 %s 님의 적금계좌 🎏 \n",testUser.getName());
+        //System.out.printf(" 계좌번호 [%s]", );
         DepositRepositoryYJ.userDepositAccount(testUser);
+
         System.out.println(" 1. 적금계좌에 추가입금하기 ");
         System.out.println(" 0. 뒤로 가기 (나가기) ");
         String menuNum = input(" >>🧼 ");
