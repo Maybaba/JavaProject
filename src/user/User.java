@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class User {
+class User {
 
     //이름
     private String name;
     //계좌정보
-    private List<Account> myAccount;
+    private static List<Account> myAccount;
     // 아이디
     private String bankId;
     // 비밀번호
@@ -37,7 +37,7 @@ public class User {
         this.name = name;
     }
 
-    public List<Account> getMyAccount() {
+    public static List<Account> getMyAccount() {
         return myAccount;
     }
 
