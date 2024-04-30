@@ -1,42 +1,47 @@
 package user;
-//TODO : 다음날로 넘어가는 기능
-public class DayAccountsYJ { //전체에서 적용되는 기능
-    //필드
+//TODO : 1. 다음날 넘김에 따른 카운트 진행  2. 이전날 = 다음날 boolean >> 계좌 이율 계산
+public class DayAccountsYJ {
+    //field
     static int dayAccount;
     static int previousDayAccount;
 
-    //생성자
-    public DayAccountsYJ(int dayAccount) {
-        this.dayAccount = dayAccount;
-        this.previousDayAccount = 0; //이전날이 없을 수도 있으므로 기본값 설정
+    // constructor
+    public DayAccountsYJ() {
+        dayAccount = 1; //시작일을 1로 초기화
+        previousDayAccount = 0; //이전날이 없을 수도 있으므로 기본값 설정
     }
 
-    //method
-    //nextday로 넘어갔는지 여부 확인
+    //int 값이 다른지 여부로 참, 거짓으로 여부 확인
     public static boolean flagNextDay() {
         return dayAccount > previousDayAccount;
     }
 
-    //dayAccuont에 +1 추가
+    //하루 지날때마다 dayAccuont에 +1 추가
     static void addDayAccount() {
         dayAccount ++;
     }
 
-
-    public void setDayAccount(int dayAccount) {
-        this.dayAccount = dayAccount;
-    }
-
+    // 현재 날짜를 이전 날짜로 업데이트하고 현재 날짜를 새로운 날짜로 설정
     //다음날로 지나갔을때 이전날 = 오늘의 날 대입
-    public void setPreviousDayAccount(int previousDayAccount) {
-        this.previousDayAccount = previousDayAccount;
+    public static void moveToNextDay() {
+        previousDayAccount = dayAccount;
+        addDayAccount();
     }
 
-    public int getDayAccount() {
+
+    public static void setDayAccount(int dayAccount) {
+        DayAccountsYJ.dayAccount = dayAccount;
+    }
+
+    public static void setPreviousDayAccount(int previousDayAccount) {
+        DayAccountsYJ.dayAccount = previousDayAccount;
+    }
+
+    public static int getDayAccount() {
         return dayAccount;
     }
 
-    public int getPreviousDayAccount() {
+    public static int getPreviousDayAccount() {
         return previousDayAccount;
     }
 

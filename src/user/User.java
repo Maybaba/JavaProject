@@ -69,6 +69,7 @@ public class User {
         this.nowDate = nowDate;
     }
 
+    //값 참조해야 해서 static 으로 바꿈
     public int getMyMoney() {
         return myMoney;
     }
