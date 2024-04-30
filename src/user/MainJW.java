@@ -1,6 +1,8 @@
 package user;
 
 
+import java.util.Scanner;
+
 public class MainJW {
 
     public static void main(String[] args) throws InterruptedException {
@@ -9,15 +11,15 @@ public class MainJW {
 //        test.test();
 //        User user = test2.login();
         User testUser = RegisterUserJW.getUsers().get("qwe");
-        testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.FIXED, "111-111111-111"));
-        testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.SAVING, "111111111"));
-        testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.TRANSFER, "213-123542"));
-        System.out.println(testUser);
-//        createAccount(user);
-//        System.out.println(user);
 
-        DepositViewYJ start = new DepositViewYJ();
-        start.depositMenu(testUser);
+        testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.FIXED, "1"));
+        testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.SAVING, "1"));
+        testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.TRANSFER, "1"));
+        System.out.println(user);
+
+        DepositWithdrawalHS test3 = new DepositWithdrawalHS();
+        test3.run(testUser);
+
 
     }
 }
