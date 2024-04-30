@@ -13,11 +13,13 @@ public class LoginJW {
         // 입력받는 아이디를 저장하는 변수
         String inputId;
         // 아이디, 비밀번호 검증 반복문
-        while(true) {
+        login : while(true) {
             System.out.println("\n========== 로그인 ==========");
             System.out.println("# 로그인을 시작합니다.");
+            System.out.println("# 로그인을 중단하려면 'x'를 입력해 주세요.");
             System.out.print("# 아이디 : ");
             inputId = sc.nextLine();
+            if(inputId.equals("x")) break login;
             // 아이디가  유저 정보 저장소에 있는지 확인
             // 있다면 비밀번호 입력창으로 이동
             // 없다면 경고문 후 다시 아이디를 입력받음
@@ -30,6 +32,7 @@ public class LoginJW {
                     // 일치한다면 로그인 성공 메세지 전송
                     System.out.print("# 비밀번호 : ");
                     String inputPassword = sc.nextLine();
+                    if(inputPassword.equals("x")) break login;
                     if (!isPassword(inputPassword, inputId)) {
                         System.out.println("비밀번호가 일치하지 않습니다.");
                     } else {

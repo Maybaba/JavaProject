@@ -30,7 +30,9 @@ public class FindUserInfo {
 
     private void findId() {
         System.out.println("\n이름을 입력하세요.");
+        System.out.println("아이디 찾기를 중단하시려면 'x'를 입력해 주세요.");
         String inputName = SimpleInput.input(">> ");
+        if(inputName.equals("x")) return;
         boolean isName = false;
         Map<String, User> users = RegisterUserJW.getUsers();
         for (String s : users.keySet()) {
@@ -52,7 +54,9 @@ public class FindUserInfo {
                 while (true) {
                     System.out.printf("%s 아이디의 비밀번호를 변경합니다.\n", inputId);
                     System.out.println("변경할 비밀번호를 입력하세요.");
+                    System.out.println("비밀번호 변경을 중단하시려면 'x'를 입력해 주세요.");
                     String inputPassword = SimpleInput.input(">> ").trim();
+                    if(inputPassword.equals("x")) return;
                     if (inputPassword.isEmpty()) {
                         System.out.println("비밀번호를 입력해 주세요.(공백, 띄워쓰기 제외)");
                     } else {

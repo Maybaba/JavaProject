@@ -26,9 +26,7 @@ public class BankController {
                     break;
                 case "2":
                     loginUser = login.login();
-                    System.out.println(RegisterUserJW.getUsers());
-                    mainMenu(loginUser);
-
+                    if(loginUser != null) mainMenu(loginUser);
                     break;
                 case "3":
                     fu.findUserInfo();
