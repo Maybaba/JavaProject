@@ -8,7 +8,7 @@ public class RegisterUserJW {
     private static Map<String, User> users = new HashMap<>();
 
     public RegisterUserJW () {
-        users.put("qwe", new User("김철수", "qwe", "1234"));
+        users.put("qwe", new User("김철수", "qwe", "1234", "돈"));
     }
 
     public void test () {
@@ -32,6 +32,7 @@ public class RegisterUserJW {
     public void registerUser () {
         String bankId;
         String bankPassword1;
+        String userTreasure;
         String userName;
         System.out.println("\n========== 회원 가입 ==========");
         System.out.println("# 회원가입을 시작합니다.");
@@ -84,10 +85,22 @@ public class RegisterUserJW {
                     }
                 }
             }
+            while (true) {
+                System.out.print("자신의 보물 1호(비밀번호 힌트)를 입력하세요\n >> ");
+                // 이름, 아이디, 비밀번호를 입력받을 시 trim 을 통해 공백(띄워쓰기)을 없앤 상태로 저장
+                userTreasure = sc.nextLine().trim();
+                if (userTreasure.equals("x")) break exit;
+                // 1. 입력한 이름이 공백이거나, 띄워쓰기만 했을경우 경고문 출력 후 다시 이름 입력받음
+                if (userTreasure.isEmpty()) {
+                    System.out.println("자신의 보물 1호를 입력해 주세요.");
+                } else {
+                    break;
+                }
+            }
 
             // 입력받은 이름, 아이디, 비밀번호를 가지고 새로운 User 객체를 생성 후
             // Map<String, User>에 저장
-            users.put(bankId, new User(userName, bankId, bankPassword1));
+            users.put(bankId, new User(userName, bankId, bankPassword1, userTreasure));
             System.out.printf("%s님의 회원가입이 완료되었습니다.\n", userName);
             break;
         }
