@@ -8,7 +8,7 @@ import java.util.List;
 public class OutputView {
 
     // 메뉴 출력 기능
-    public void selectMenu() {
+    public void MenuView() {
         System.out.println("===== 관리자 페이지 입니다 =====");
         System.out.println("# 1. 총 잔고 확인");
         System.out.println("# 2. 전체 회원 정보 조회");
@@ -28,4 +28,6 @@ public class OutputView {
     public void getCustomerInfo(User testUser) {
         System.out.println(testUser.getMyAccount());
     }
+
+
 }
