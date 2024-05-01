@@ -18,7 +18,7 @@
 						System.out.println("이전 화면으로 돌아갑니다.");
 						return;
 					default:
-						System.out.println("올바른 번호를 입력해 주세요.\n입금: 1, 출금 2, 나가기 0");
+						System.out.println("올바른 번호를 입력해 주세요\n입금: 1, 출금 2, 나가기 0");
 				}
 			}
 		}
@@ -58,12 +58,13 @@
 		public void depositToAccount (User user) {
 //			System.out.println(acc.getBalance()); // 현재 계좌 잔액 출력
 			while (true) {
-				System.out.println("\n# 입금할 금액을 입력하세요");
+				System.out.println("\n# 입금할 금액을 입력하세요\n# 취소하려면 [X]를 입력하세요");
+				String depositAmountStr = input(">> ");
+				if (depositAmountStr.toUpperCase().equals("X")) break;
 				try {
-					String depositAmountStr = input(">> ");
 					long depositAmount = Long.parseLong(depositAmountStr);
 					if (depositAmount <= 0) {
-						System.out.println("# 0보다 큰 정수를 입력해 주세요.");
+						System.out.println("# 0보다 큰 정수를 입력해 주세요");
 						continue;
 					}
 
@@ -71,7 +72,7 @@
 					System.out.println("\n입금 후 잔액: " + accountVerification(user).getBalance());
 					break;
 				} catch (NumberFormatException e) {
-					System.out.println("# 0보다 큰 정수를 입력해 주세요.");
+					System.out.println("# 0보다 큰 정수를 입력해 주세요");
 				}
 			}
 		}
@@ -79,16 +80,17 @@
 		// 출금 메서드
 		public void withdrawalFromAccount (User user) {
 			if(accountVerification(user).getBalance() == 0) {
-				System.out.println("출금 할 수 없습니다. (잔액 : 0원)");
+				System.out.println("출금 할 수 없습니다.(잔액 : 0원)");
 				return;
 			}
 			while (true) {
-				System.out.printf("\n# 출금할 금액을 입력하세요\n# 현재 잔액: %d\n", accountVerification(user).getBalance());
+				System.out.printf("\n# 출금할 금액을 입력하세요\n# 현재 잔액: %d\n# 취소하려면 [X]를 입력하세요\n", accountVerification(user).getBalance());
+				String withdrawalAmountStr = input(">> ");
+				if (withdrawalAmountStr.toUpperCase().equals("X")) break;
 				try {
-					String withdrawalAmountStr = input(">> ");
 					long withdrawalAmount = Long.parseLong(withdrawalAmountStr);
 					if (withdrawalAmount <= 0) {
-						System.out.println("# 0보다 큰 정수를 입력해 주세요.");
+						System.out.println("# 0보다 큰 정수를 입력해 주세요");
 						continue;
 					}
 					if (accountVerification(user).getBalance() >= withdrawalAmount) { // 출금액이 잔액보다 적은지 확인
