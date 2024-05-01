@@ -7,9 +7,9 @@ import static user.DayAccountsYJ.*;
 import static util.SimpleInput.*;
 
 class SavingAccountYJ {
-    private static long transferBalance = 123123;//getTransferAccountBalance();;
-    private static long savingBalance = 123123123;//getSavingAccountBalance();
-    private static long monthlySaveBalance = 20; //매달 넣는 금액 -> 제훈님 코드에서 가져오기 -> 변경가능 -> iter 조건에 추가하기
+    private static long transferBalance = AccountBalanceAccessorYJ.getTransferAccountBalance();
+    private static long savingBalance = AccountBalanceAccessorYJ.getSavingAccountBalance();
+    private static long monthlySaveBalance = AccountBalanceAccessorYJ.getSavingAccountBalance();
     private static double monthlyInterestRate = 0.01; //적금계좌 이자율 : 1% -> 관리자가 바꿀 수 있음
 
 

@@ -48,7 +48,7 @@ public class User {
         this.name = name;
     }
 
-    public static List<Account> getMyAccount() {
+    public List<Account> getMyAccount() {
         return myAccount;
     }
 

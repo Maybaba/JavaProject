@@ -17,8 +17,9 @@ public class MainJW {
         testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.TRANSFER, "1"));
 //        System.out.println(user);
 
-        DepositWithdrawalHS test3 = new DepositWithdrawalHS();
-        test3.run(testUser);
+        //DepositWithdrawalHS test3 = new DepositWithdrawalHS();
+        //test3.run(testUser);
+
 
     }
 }
