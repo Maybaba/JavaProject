@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-class User {
+public class User {
 
     //이름
     private String name;
@@ -82,7 +82,7 @@ class User {
 
 
     //값 참조해야 해서 static 으로 바꿈
-    public int getMyMoney() {
+    public long getMyMoney() {
         return myMoney;
     }
 
