@@ -16,7 +16,7 @@ public class MainJW {
 //        createAccount(user);
 //        System.out.println(user);
 
-        DepositViewYJ start = new DepositViewYJ();
+        DepositCtrlYJ start = new DepositCtrlYJ();
         start.depositMenu(testUser);
 
     }
