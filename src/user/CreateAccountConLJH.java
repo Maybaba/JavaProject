@@ -7,6 +7,8 @@ import static user.SimpleInput.input;
 public class CreateAccountConLJH extends Account {
     private AccountType accountType;
 
+    public CreateAccountConLJH() {};
+
     public CreateAccountConLJH(long balance, User user, int accountPassword, AccountType type, Account accountNum) {
         super(balance, user, accountPassword, type, String.valueOf(accountNum));
         this.accountType = AccountType.SAVING;
