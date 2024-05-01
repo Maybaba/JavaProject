@@ -10,7 +10,7 @@ public class Main {
 
         // 메뉴를 보여주는 기능
         OutputView outputView = new OutputView();
-        outputView.MenuView();
+        outputView.showMenu();
 
         // 회원 정보가 들어있음.
         RegisterUserJW test = new RegisterUserJW();
@@ -27,16 +27,22 @@ public class Main {
         InputView inputView = new InputView();
         int menuNumber = inputView.inputMenuNumber();
 
+
         //1번을 입력 받았을 때 전체 고객 통잔 잔고를 반환하는 기능
-        if(menuNumber == 1) {
-            OutputView totalMoney = new OutputView();
-            totalMoney.getTotalMoney();
-        }
+//        if(menuNumber == 1) {
+//            OutputView totalMoney = new OutputView();
+//            totalMoney.getTotalMoney();
+//        }
 
         // 2번을 입력 받았을 때 전체 고객 정보를 반환하는 기능
         if (menuNumber == 2) {
             OutputView getInfo = new OutputView();
             getInfo.getCustomerInfo(testUser);
+        }
+
+        //0번을 입력 받았을 때 이전 메뉴로 돌아가는 기능
+        if (menuNumber == 0) {
+            System.out.println("이전으로 돌아갑니다.");
         }
     }
 }

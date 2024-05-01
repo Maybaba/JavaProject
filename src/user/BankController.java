@@ -15,7 +15,9 @@ public class BankController {
         testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.FIXED, "1"));
         testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.SAVING, "1"));
         testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.TRANSFER, "1"));
+
         while (true) {
+
             System.out.println("\n========== SeSeSe Bank! ==========");
             System.out.println("1. 회원가입");
             System.out.println("2. 로그인");
@@ -24,6 +26,7 @@ public class BankController {
             System.out.println("==================================");
             System.out.println("메뉴를 선택하세요.");
             String menuNum = SimpleInput.input(">> ");
+
             switch (menuNum) {
                 case "1":
                     ru.registerUser();
