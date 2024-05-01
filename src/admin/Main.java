@@ -29,10 +29,17 @@ public class Main {
 
 
         //1번을 입력 받았을 때 전체 고객 통잔 잔고를 반환하는 기능
+<<<<<<< HEAD
 //        if(menuNumber == 1) {
 //            OutputView totalMoney = new OutputView();
 //            totalMoney.getTotalMoney();
 //        }
+=======
+        if(menuNumber == 1) {
+            OutputView totalMoney = new OutputView();
+//            totalMoney.getTotalMoney();
+        }
+>>>>>>> 83bba9597a2140d6ca10cf3450439645f8034619
 
         // 2번을 입력 받았을 때 전체 고객 정보를 반환하는 기능
         if (menuNumber == 2) {

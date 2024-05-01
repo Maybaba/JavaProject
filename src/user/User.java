@@ -10,7 +10,7 @@ public class User {
     //이름
     private String name;
     //계좌정보
-    private List<Account> myAccount;
+    private static List<Account> myAccount;
     // 아이디
     private String bankId;
     // 비밀번호
@@ -18,7 +18,7 @@ public class User {
     // 가입일자
     private LocalDate nowDate;
     // 잔액 -
-    private int myMoney;
+    private long myMoney;
     // 비밀번호 힌트 - 보물 1호
     private String myTreasure;
 
@@ -48,7 +48,7 @@ public class User {
         this.name = name;
     }
 
-    public List<Account> getMyAccount() {
+    public static List<Account> getMyAccount() {
         return myAccount;
     }
 
@@ -80,11 +80,13 @@ public class User {
         this.nowDate = nowDate;
     }
 
-    public int getMyMoney() {
+
+    //값 참조해야 해서 static 으로 바꿈
+    public long getMyMoney() {
         return myMoney;
     }
 
-    public void setMyMoney(int myMoney) {
+    public void setMyMoney(long myMoney) {
         this.myMoney = myMoney;
     }
 
