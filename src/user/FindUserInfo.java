@@ -29,23 +29,24 @@ public class FindUserInfo {
     }
 
     private void findId() {
-        boolean isUser = true;
         Map<String, User> users = RegisterUserJW.getUsers();
         System.out.println("\n이름을 입력하세요.");
         System.out.println("아이디 찾기를 중단하시려면 'x'를 입력해 주세요.");
         String inputName = SimpleInput.input(">> ");
         if(inputName.equals("x")) return;
-        a:while(true) {
+        boolean exit = false;
+
             for (String s : users.keySet()) {
                 if (users.get(s).getName().equals(inputName)) {
-                    break a;
+                    exit = true;
+                    break ;
                 }
             }
+
+        if(!exit) {
             System.out.printf("%s님의 가입정보가 존재하지 않습니다.", inputName);
-            isUser = false;
-            break;
+            return;
         }
-        if(!isUser) return;
         System.out.println("\n 자신의 보물 1호를 입력하세요.");
         String inputTreasure = user.SimpleInput.input(">> ");
         findId : for (String s : users.keySet()) {
