@@ -14,13 +14,14 @@ class DayAccountsYJ {
     static int dayCount;
     static int previousDayCount;
     //하루가 지났는지 확인 및 초기화 필드
-    static int nextDay; // CHECKNEXTDAY가 계속 0으로 초기화 되어야 함
+    static int nextDay = 0; // CHECKNEXTDAY가 계속 0으로 초기화 되어야 함
 
     // 현재 날짜를 이전 날짜로 업데이트하고 현재 날짜를 새로운 날짜로 설정
     //다음날로 지나갔을때 이전날 = 오늘의 날 대입
     static void moveToNextDay() {
         previousDayCount = dayCount;
         addDayAccount();
+        nextDay++;
     }
 
     //하루 지날때마다 dayAccuont에 +1 추가
@@ -45,12 +46,12 @@ class DayAccountsYJ {
     // 다음날로 넘어갔는지 확인하는 메서드
     static boolean checkNextDay() {
         if (nextDay == 0) {
-            if(dayCount > 0) {
-                nextDay++;
+            if(dayCount > 0) { //처음 0일째만 적용되는 로직
+                //nextDay++;
             } return false; // 첫 호출일 때는 다음날로 넘어가지 않은 것으로 간주
         } else {
             nextDay = 0; //이미 1인 값을 0으로 초기화
-            System.out.println("실험 로그 : 하루가 초기화되었습니다.");
+            System.out.println("실험 로그 : 하루 재 초기화 됨.");
             return true; // 이미 다음날로 넘어간 상태
         }
     }

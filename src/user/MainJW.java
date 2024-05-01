@@ -18,7 +18,11 @@ public class MainJW {
 //        System.out.println(user);
 
         DepositWithdrawalHS test3 = new DepositWithdrawalHS();
-        test3.run(testUser);
+        //test3.run(testUser);
+
+        //예적금코드 바로 실험하기
+        DepositCtrlYJ TC = new DepositCtrlYJ();
+        TC.depositMenu(testUser);
 
     }
 }
