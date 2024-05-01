@@ -18,15 +18,26 @@ class User {
     // 가입일자
     private LocalDate nowDate;
     // 잔액 -
-    private int myMoney;
+    private long myMoney;
+    // 비밀번호 힌트 - 보물 1호
+    private String myTreasure;
 
-    public User(String name, String bankId, String bankPassword) {
+    public User(String name, String bankId, String bankPassword, String myTreasure) {
         this.name = name;
         this.myAccount = new ArrayList<>();
         this.bankId = bankId;
         this.bankPassword = bankPassword;
         this.nowDate = LocalDate.now();
         this.myMoney = 0;
+        this.myTreasure = myTreasure;
+    }
+
+    public String getMyTreasure() {
+        return myTreasure;
+    }
+
+    public void setMyTreasure(String myTreasure) {
+        this.myTreasure = myTreasure;
     }
 
     public String getName() {
@@ -69,12 +80,13 @@ class User {
         this.nowDate = nowDate;
     }
 
+
     //값 참조해야 해서 static 으로 바꿈
     public int getMyMoney() {
         return myMoney;
     }
 
-    public void setMyMoney(int myMoney) {
+    public void setMyMoney(long myMoney) {
         this.myMoney = myMoney;
     }
 
