@@ -30,7 +30,8 @@ public class UserInfoJW {
             accountCount++;
         }
         System.out.println("================");
-        System.out.println("\n# 총 잔액 : " + totalBalance + "원");
+        user.setMyMoney(totalBalance);
+        System.out.println("\n# 총 잔액 : " + user.getMyMoney() + "원");
 
 
     }

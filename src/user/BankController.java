@@ -8,8 +8,9 @@ public class BankController {
     UserInfoJW userInfo = new UserInfoJW();
     FindUserInfo fu = new FindUserInfo();
     DepositWithdrawalHS dw = new DepositWithdrawalHS();
+    CreateAccountConLJH ca = new CreateAccountConLJH();
 
-    public void startMenu () {
+    public void startMenu () throws InterruptedException {
         User loginUser;
         User testUser = RegisterUserJW.getUsers().get("qwe");
         testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.FIXED, "1"));
@@ -46,11 +47,13 @@ public class BankController {
 
     }
 
-    private void mainMenu(User user) {
+    private void mainMenu(User user) throws InterruptedException {
         while (true) {
             System.out.println("\n========== SeSeSe Bank! ==========");
             System.out.println("# 1. 마이페이지");
             System.out.println("# 2. 입-출금");
+            System.out.println("# 3. 계좌 개설");
+            System.out.println("# 4. 예금, 적금 페이지");
             System.out.println("# 0. 로그아웃");
             System.out.println("=====================================");
             System.out.println("메뉴를 선택하세요.");
@@ -61,6 +64,11 @@ public class BankController {
                     break;
                 case "2":
                     dw.run(user);
+                    break;
+                case "3":
+                    CreateAccountConLJH.createAccount(user);
+                    break;
+                case "4":
                     break;
                 case "0":
                     System.out.printf("%s님 안녕히가세요!\n", user.getName());
