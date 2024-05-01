@@ -60,7 +60,7 @@
 			while (true) {
 				System.out.println("\n# 입금할 금액을 입력하세요\n# 취소하려면 [X]를 입력하세요");
 				String depositAmountStr = input(">> ");
-				if (depositAmountStr.toUpperCase().equals("X")) break;
+				if (depositAmountStr.equalsIgnoreCase("X")) break;
 				try {
 					long depositAmount = Long.parseLong(depositAmountStr);
 					if (depositAmount <= 0) {
@@ -86,7 +86,7 @@
 			while (true) {
 				System.out.printf("\n# 출금할 금액을 입력하세요\n# 현재 잔액: %d\n# 취소하려면 [X]를 입력하세요\n", accountVerification(user).getBalance());
 				String withdrawalAmountStr = input(">> ");
-				if (withdrawalAmountStr.toUpperCase().equals("X")) break;
+				if (withdrawalAmountStr.equalsIgnoreCase("X")) break;
 				try {
 					long withdrawalAmount = Long.parseLong(withdrawalAmountStr);
 					if (withdrawalAmount <= 0) {
