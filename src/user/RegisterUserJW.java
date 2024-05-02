@@ -12,13 +12,12 @@ public class RegisterUserJW {
     }
 
     public void test () {
-        System.out.println("\n========== SeSeSe Bank! ==========");
-        System.out.println("1. 회원가입");
-        System.out.println("2. 로그인");
-        System.out.println("3. 프로그램 종료");
-        System.out.println("==================================");
-        System.out.println("메뉴를 선택하세요.");
-        System.out.print(">> ");
+        System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ SeSeSe Bank ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+        System.out.println(" 1. 회원가입");
+        System.out.println(" 2. 로그인");
+        System.out.println(" 3. 프로그램 종료");
+        System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎ 원하시는 메뉴를 선택해주세요 ▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+        System.out.print(" □▫∙︎ ︎");
         menuNum=sc.nextLine();
         System.out.println(menuNum);
         if(menuNum.equals("1")) {
@@ -34,18 +33,18 @@ public class RegisterUserJW {
         String bankPassword1;
         String userTreasure;
         String userName;
-        System.out.println("\n========== 회원 가입 ==========");
-        System.out.println("# 회원가입을 시작합니다.");
-        System.out.println("# 회원가입을 중시하시려면 'x'를 입력해 주세요.");
+        System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎ 화원가입 ▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+        System.out.println(" ♦︎ 회원가입을 시작합니다.");
+        System.out.println(" ◆ 회원가입을 중시하시려면 'x'를 입력해 주세요.");
         exit: while(true) {
             while (true) {
-                System.out.print("이름를 입력하세요\n >> ");
+                System.out.print(" ◇ 이름를 입력하세요\n 🧼 ");
                 // 이름, 아이디, 비밀번호를 입력받을 시 trim 을 통해 공백(띄워쓰기)을 없앤 상태로 저장
                 userName = sc.nextLine().trim().replace(" ", "");
                 if (userName.equals("x")) break exit;
                 // 1. 입력한 이름이 공백이거나, 띄워쓰기만 했을경우 경고문 출력 후 다시 이름 입력받음
                 if (userName.isEmpty()) {
-                    System.out.println("이름을 입력해 주세요.");
+                    System.out.println(" ◆ 이름을 입력해 주세요.");
                 } else {
                     break;
                 }
