@@ -9,7 +9,6 @@ public class RegisterUserJW {
     private static Map<String, User> users = new HashMap<>();
 
     public RegisterUserJW () {
-        users.put("qwe", new User("김철수", "qwe", "1234", "돈"));
     }
 
     public void test () {

@@ -34,8 +34,7 @@ public class OutputView {
     public void getCustomerInfo(Map<String, User> users) {
         for (String key : users.keySet()) {
             User user = users.get(key);
-            System.out.println("이름 : " + user.getName() + " 계좌정보: " + user.getMyAccount() + " 아이디: " + user.getBankId() + " 비밀번호: " + user.getBankPassword() + " 가입일자: " + user.getNowDate() + " 잔액: " + user.getMyMoney() + " 비밀번호힌 트: " + user.getMyTreasure());
-
+            System.out.println("이름 : " + user.getName() + ", 아이디: " + user.getBankId() + ", 가입일자: " + user.getNowDate());
 
         }
     }
