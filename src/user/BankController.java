@@ -18,8 +18,14 @@ public class BankController {
 
     public void startMenu () throws InterruptedException {
         User loginUser;
+        //테스트용 계정
+        User testUser = RegisterUserJW.getUsers().get("qwe");
+        testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.FIXED, "1"));
+        testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.SAVING, "1"));
+        testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.TRANSFER, "1"));
 
-        while (true) {
+
+            while (true) {
 
             System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ SeSeSe Bank ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
             System.out.println(" 1. 회원가입");
