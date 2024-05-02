@@ -47,7 +47,7 @@ public class AccountBalanceAccessorYJ {
             }
         }
     }
-    
+
     public static long getSavingAccountBalance() {
         return savingAccountBalance;
     }

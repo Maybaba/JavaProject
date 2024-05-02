@@ -74,6 +74,9 @@ public class BankController {
             switch (mainMenuNum) {
                 case "1":
                     userInfo.userInfo(user);
+                    System.out.println(" \n press any key ...");
+                    Scanner sc = new Scanner(System.in);
+                    sc.nextLine();
                     break;
                 case "2":
                     dw.run(user);

@@ -12,13 +12,15 @@ public class DepositCtrlYJ {
     //controller
     public static void depositMenu(User user) {
 
-        System.out.printf("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 마이 예적금 ==== sesese-bank와 [ %s일 째 ] ======== 🧼 \n", dayCount);
+        System.out.printf("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 마이 예금 ∙ 적금 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 \n", dayCount);
+        System.out.printf("               sesese-bank 와 [ %s일 째 ]🫧\n", dayCount);
+
         System.out.println(" 1. 나의 적금 ");
         System.out.println(" 2. 나의 예금 ");
         System.out.println(" 0. 뒤로 가기 (나가기) ");
         System.out.println(" *. 다음날로 ");
 
-        String menuNum = input(" >>🧼 ");
+        String menuNum = input("  □▫∙︎ ︎");
 
         switch (menuNum) {
             case "1": //나의 적금 현황
@@ -45,13 +47,8 @@ public class DepositCtrlYJ {
 
                 //예적금 이율계산코드
                 System.out.println("\n 🧼 마이 예금 ∙ 적금 오늘의 이율 연동중 . . .  sesese-bank 🧼 \n");
-
                 userSavingAccount(user);
-                System.out.println(" \n press any key ...");
-                sc.nextLine();
                 userFixedAccount(user);
-                System.out.println(" \n press any key ...");
-                sc.nextLine();
 
                 depositMenu(user); //이전의 메뉴 돌아가기
                 break;

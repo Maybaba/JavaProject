@@ -25,7 +25,7 @@ class FixedAccountYJ {
                     updateFixedBalances(user,fixedBalance);
 
                     System.out.printf(" ◇ 하루가 지남에 따라 예금계좌에 [ %.2f 원 ]의 이자가 쌓였습니다. \n",interest);
-                    System.out.printf(" ◆ 하루가 지남에 따라 예금계좌 잔고는 [ %d 원 ] 입니다 \n\n",fixedBalance);
+                    System.out.printf(" ♦︎ 하루가 지남에 따라 예금계좌 잔고는 [ %d 원 ] 입니다 \n\n",fixedBalance);
                     System.out.println("\n \npress any key ...\n");
                     s.nextLine();
                 }

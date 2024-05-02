@@ -26,8 +26,8 @@ class SavingAccountYJ {
             //적금 계좌 업데이트
             updateSavingBalances(user, savingBalance);
 
-            System.out.printf("❕하루가 지남에 따라 적금계좌에 [ %.2f 원 ]의 이자가 쌓였습니다. \n", interest);
-            System.out.printf("❕나의 현재 적금계좌 잔액 [%d 원]\n\n", savingBalance);
+            System.out.printf(" ♦︎ 하루가 지남에 따라 적금계좌에 [ %.2f 원 ]의 이자가 쌓였습니다. \n", interest);
+            System.out.printf(" ◇ 하루가 지남에 따라 적금계좌 잔고는 [ %d 원 ] 입니다.\n\n", savingBalance);
         }
 
         //한달주기 자동이체적금
@@ -43,11 +43,11 @@ class SavingAccountYJ {
                 //입출금계좌 업데이트
                 updateTransferBalances(user, transferBalance);
 
-                System.out.print("\n◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇\n");
-                System.out.printf(" \n ◇ 매달 적금 자동이체 시스템으로 입출금계좌에서 적금계좌로 %d 원이 이체되었습니다. \n ", monthlySaveBalance);
+                System.out.print("\n              ∙▫︎ ☐ □ ・                \n");
+                System.out.printf(" \n ◇ 매달 적금 자동이체 시스템으로 \n입출금계좌에서 적금계좌로 %d 원이 이체되었습니다. \n ", monthlySaveBalance);
                 System.out.printf(" ◆ 현재 적금계좌 잔액 [%d 원] \n", savingBalance);
                 System.out.printf(" ◆ 현재 입출금계좌 잔액 [%d 원] \n", transferBalance);
-                System.out.print("\n◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇\n");
+                System.out.print("\n              ∙▫︎ ☐ □ ・                \n");
 
             } else System.out.println(" ⁉️입출금계좌에 잔액이 부족하여 자동이체 적금을 실패하였습니다. \n");
             System.out.println("\n \npress any key ...\n");
@@ -83,8 +83,6 @@ class SavingAccountYJ {
                         updateSavingBalances(user, savingBalance);
 
                         System.out.printf(" \n 추가납입 성공 💨 적금계좌 잔액 [ %d 원 ] \n", savingBalance);
-                        System.out.println("\n \npress any key ...\n");
-                        s.nextLine();
 
                     } else System.out.printf(" ⁉️ 입출금계좌 잔액이 부족합니다. \n      현재 입출금계좌 잔액 [ %d 원] ",transferBalance);
                     System.out.println("\n \npress any key ...\n");
