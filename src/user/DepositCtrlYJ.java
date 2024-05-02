@@ -31,8 +31,8 @@ public class DepositCtrlYJ {
 
             case "0": // 뒤로 가기
                 System.out.println("이전 메뉴로 돌아갑니다 ...");
-                depositMenu(user); //이거 이전의 메뉴
-                break;
+//                BankController.mainMenu(user);
+                return;//이거 이전의 메뉴
 
             case "*": // 다음날로, 하루 +
                 moveToNextDay();

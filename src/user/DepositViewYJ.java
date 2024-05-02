@@ -22,9 +22,9 @@ public class DepositViewYJ {
 
         System.out.printf("\n 🧼========== 마이적금 sesese-bank 와 [ %s일 째 ] ========== 🧼 \n", dayCount);
 
-        System.out.printf(" ✦ 나의 적금계좌 잔액 [%d]원 \n\n", AccountBalanceAccessorYJ.getSavingAccountBalance()); //getSavingAccountBalance()
+        System.out.printf(" ✦ 나의 적금계좌 잔액 [%d]원 \n\n", getSavingBalance());
         System.out.printf(" ♦︎ 매달 [%d 원] 적금하고 있어요 \n\n", AccountBalanceAccessorYJ.getSavingAccountBalance());
-        System.out.printf(" ✧ 나의 적금계좌 이율 [ %.2f ] 퍼 센 트 \n", getMonthlyInterestRate());
+        System.out.println(" ✧ 나의 적금계좌 이율 [ 1 % ] \n");
         System.out.println("(하루, 삼일이 지날때마다 이율은 중복으로 계산됩니다.)\n");
         System.out.println("press any key ...");
         s.nextLine();
@@ -32,7 +32,7 @@ public class DepositViewYJ {
         //이자 계산 함수
         userSavingAccount(testUser);
 
-        while (true) {
+        d:  while (true) {
             System.out.println(" 1. 적금계좌에 추가입금하기 ");
             System.out.println(" 0. 뒤로 가기 (나가기) ");
             String menuNum = input(" >>🧼 ");
@@ -43,7 +43,7 @@ public class DepositViewYJ {
 
                 case "0": //뒤로 가기
                     depositMenu(testUser);
-                    break;
+                    break d;
 
                 default: //이외의 값을 선택했을 때
                     System.out.println(" 👻 1, 0 번중 하나를 선택해주세요 \n press any key ...");
@@ -61,8 +61,8 @@ public class DepositViewYJ {
 
         System.out.printf("\n 🧼 ========== 마이예금 sesese-bank 와 [ %s일 째 ] ========== 🧼 \n",dayCount);
 
-        System.out.printf(" ♦︎ 나의 예금계좌 잔액 [%d 원] \n", AccountBalanceAccessorYJ.getFixedAccountBalance());
-        System.out.printf(" ✧ 나의 적금계좌 이율 [ %.2f ] 퍼 센 트 \n", getFixedInterestRate());
+        System.out.printf(" ♦︎ 나의 예금계좌 잔액 [%d 원] \n", getFixedBalance());
+        System.out.println(" ✧ 나의 예금계좌 이율 [ 5 % ] \n");
         System.out.println("(하루가 지날때마다 이율은 중복으로 계산됩니다.)\n");
         System.out.println("press any key ...");
         s.nextLine();

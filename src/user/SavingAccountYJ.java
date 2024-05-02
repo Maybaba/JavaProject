@@ -52,14 +52,16 @@ class SavingAccountYJ {
         }
 
         //한달주기 자동이체적금
-        if ((dayCount != 0) && (dayCount % 3 == 0)) { //4일 (한달)이 지났는가?, 맨 처음엔 하루가 지나지 않았으므로 실행 ㄴ
+        if ((dayCount != 0) && (dayCount % 3 == 0)) { //3일 (한달)이 지났는가?, 맨 처음엔 하루가 지나지 않았으므로 실행
             if (monthlySaveBalance <= savingBalance) {
 
                 // 입출금계좌에서 적금계좌로 일정금액 송금기능
                 savingBalance += monthlySaveBalance;
                 transferBalance -= monthlySaveBalance;
-                System.out.printf(" ◇ 매달 적금 자동이체 시스템으로 입출금계좌에서 적금계좌로 %d 원이 이체되었습니다. \n ", monthlySaveBalance);
+                System.out.print("\n◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇\n");
+                System.out.printf(" \n ◇ 매달 적금 자동이체 시스템으로 입출금계좌에서 적금계좌로 %d 원이 이체되었습니다. \n ", monthlySaveBalance);
                 System.out.printf(" ◆ 현재 적금계좌 잔액 [%d 원] \n", savingBalance);
+                System.out.print("\n◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇\n");
 
             } else System.out.println(" ⁉️입출금계좌에 잔액이 부족하여 자동이체 적금을 실패하였습니다. \n");
             System.out.println("\n \npress any key ...\n");
@@ -105,7 +107,12 @@ class SavingAccountYJ {
                 }
             }
         }
+
+    public static long getSavingBalance() {
+        return savingBalance;
     }
+}
+
 
 
 

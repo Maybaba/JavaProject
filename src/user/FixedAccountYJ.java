@@ -32,8 +32,9 @@ class FixedAccountYJ {
                     s.nextLine();
                 }
             }
-    public static double getFixedInterestRate() {
-        return fixedInterestRate;
+
+    public static long getFixedBalance() {
+        return fixedBalance;
     }
 }
 
