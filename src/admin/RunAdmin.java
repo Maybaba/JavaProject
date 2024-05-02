@@ -29,9 +29,5 @@ public class RunAdmin {
             OutputView getInfo = new OutputView();
             getInfo.getCustomerInfo(RegisterUserJW.getUsers());
         }
-
-        //0번을 입력 받았을 때 이전 메뉴로 돌아가는 기능
-//        if (menuNumber == 0) {
-//            System.out.println("이전으로 돌아갑니다.");
-        }
     }
+}

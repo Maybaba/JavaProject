@@ -2,9 +2,7 @@ package admin;
 
 import user.Account;
 import user.User;
-import user.UserInfoJW;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
