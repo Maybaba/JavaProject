@@ -12,8 +12,10 @@ public class LoginJW {
     public User login () {
         // 입력받는 아이디를 저장하는 변수
         String inputId;
+        boolean isLogin = false;
         // 아이디, 비밀번호 검증 반복문
         login : while(true) {
+
             System.out.println("\n========== 로그인 ==========");
             System.out.println("# 로그인을 시작합니다.");
             System.out.println("# 로그인을 중단하려면 'x'를 입력해 주세요.");
@@ -38,6 +40,7 @@ public class LoginJW {
                     } else {
                         String userName = RegisterUserJW.getUsers().get(inputId).getName();
                         System.out.printf("%s님 SeSeSeBank에 오신것을 환영합니다.\n", userName);
+                        isLogin = true;
                         break;
                     }
                 }
@@ -46,7 +49,11 @@ public class LoginJW {
 
         }
         // 로그인 성공시 이 아이디와 비밀번호를 가지는 유저 정보 객체를 반환
-        return RegisterUserJW.getUsers().get(inputId);
+        if(isLogin) {
+            return RegisterUserJW.getUsers().get(inputId);
+        } else {
+            return null;
+        }
     }
 
 
