@@ -64,9 +64,9 @@ public class BankController {
         while (true) {
             System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ SeSeSe Bank ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
             System.out.println(" 1. 마이페이지");
-            System.out.println(" 2. 입-출금");
+            System.out.println(" 2. 입금 ∙ 출금");
             System.out.println(" 3. 계좌 개설");
-            System.out.println(" 4. 예금, 적금 페이지");
+            System.out.println(" 4. 예금 ∙ 적금");
             System.out.println(" 0. 로그아웃");
             System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎ 원하시는 메뉴를 선택해주세요 ▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
             System.out.println("메뉴를 선택하세요.");
@@ -90,7 +90,7 @@ public class BankController {
                     s.nextLine();
                     return;
                 default:
-                    System.out.println(" 👻 정확한 메뉴 번호를 입력해 주세요");
+                    System.out.println(" ⁉️ 정확한 메뉴 번호를 입력해 주세요");
                     break;
             }
         }

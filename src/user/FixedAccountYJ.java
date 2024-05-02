@@ -13,18 +13,16 @@ class FixedAccountYJ {
     private static double fixedInterestRate = 0.05;
 
     //fixed Account
-    public static void userFixedAccount(User testUser) {
+    public static void userFixedAccount(User user) {
 
         Scanner s = new Scanner(System.in);
 
-        System.out.println("\n 🧼 마이예금 이율 연동 중 . . . sesese-bank 🧼 \n");
-
                 //하루 지났을때 원금에 예금 이자 더해주기
                 if (checkNextDay2()) {
-                    System.out.println("실험용 예금액 = " + fixedBalance);
 
                     double interest = fixedBalance * fixedInterestRate;
                     fixedBalance += (long) interest;
+                    updateFixedBalances(user,fixedBalance);
 
                     System.out.printf(" ◇ 하루가 지남에 따라 예금계좌에 [ %.2f 원 ]의 이자가 쌓였습니다. \n",interest);
                     System.out.printf(" ◆ 하루가 지남에 따라 예금계좌 잔고는 [ %d 원 ] 입니다 \n\n",fixedBalance);
@@ -32,10 +30,6 @@ class FixedAccountYJ {
                     s.nextLine();
                 }
             }
-
-    public static long getFixedBalance() {
-        return fixedBalance;
-    }
 }
 
 

@@ -22,13 +22,13 @@ public class CreateAccountConLJH extends Account {
         createView();
 
         while (true) {
-            String menuNum = input(">> ");
+            String menuNum = input(" □▫∙︎ ︎");
 
             switch (menuNum) {
                 case "1":
-                    System.out.println("\n저축 예금 계좌를 선택하셨습니다.");
+                    System.out.println("\n ∙ ◻︎ 저축 예금 계좌를 선택하셨습니다 ◻︎ ▫");
                     Thread.sleep(1000);
-                    System.out.println("현재 가입하실 수 있는 예금 상품으로는 금리 일 5%의 상품이 있습니다.");
+                    System.out.println(" ◻︎ ◻︎ 현재 가입하실 수 있는 예금 상품으로는 금리 일 5%의 상품이 있습니다 ▫︎ □ ");
                     Thread.sleep(1500);
                     while (true) {
                         int fixed = 0;
@@ -47,7 +47,7 @@ public class CreateAccountConLJH extends Account {
                             createView();
                             break;
                         } else {
-                            System.out.println("올바른 메뉴번호를 입력해주세요.");
+                            System.out.println("⁉️ 올바른 메뉴번호를 입력해주세요.");
                         }
                     }break;
 
@@ -59,7 +59,7 @@ public class CreateAccountConLJH extends Account {
                     while (true) {
                         int saving = 0;
                         try {
-                            saving = Integer.parseInt(input("가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n>> ").replace(" ",""));
+                            saving = Integer.parseInt(input("가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n □▫∙ ").replace(" ",""));
                         } catch (NumberFormatException e) {
                             System.out.println("숫자를 입력해주세요");
                         }
@@ -82,7 +82,7 @@ public class CreateAccountConLJH extends Account {
 
                         int saving = 0;
                         try {
-                            saving = Integer.parseInt(input("가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n>> ").replace(" ",""));
+                            saving = Integer.parseInt(input("가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n□▫∙ ").replace(" ",""));
                         } catch (NumberFormatException e) {
                             System.out.println("숫자를 입력해주세요");
                         }
@@ -91,12 +91,12 @@ public class CreateAccountConLJH extends Account {
                             createTransfer(user);
                             break;
                         } else if (saving == 2) {
-                            System.out.println("이전 메뉴로 돌아갑니다.");
+                            System.out.println("🪬 이전 메뉴로 돌아갑니다.");
                             createView();
                             break;
                             // 메뉴이동
                         } else {
-                            System.out.println("올바른 메뉴번호를 입력해주세요.");
+                            System.out.println("⁉️ 올바른 메뉴번호를 입력해주세요.");
                         }
                     }break;
 
@@ -105,7 +105,7 @@ public class CreateAccountConLJH extends Account {
                     if (flag) return;
                     break;
                 default:
-                    System.out.println("# 올바른 메뉴 번호를 입력하세요!");
+                    System.out.println("⁉️ 올바른 메뉴 번호를 입력하세요!");
             }
         }
         } catch (InterruptedException e) {
@@ -117,9 +117,9 @@ public class CreateAccountConLJH extends Account {
 
     static boolean exitProgram() {
         while (true) {
-            String exit = input("- 이전화면으로 가시겠습니까? [y/n]\n>> ");
+            String exit = input("🪬 이전화면으로 가시겠습니까? [y/n]\n □▫∙︎ ");
             if (exit.equals("y")) {
-                System.out.println("이전화면으로 돌아갑니다.");
+                System.out.println("🪬 이전화면으로 돌아갑니다. 🪬");
 
                 return true;
             } else if (exit.equals("n")) {

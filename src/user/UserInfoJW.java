@@ -7,12 +7,12 @@ public class UserInfoJW {
 
     // 매개변수로 받은 User의 정보를 보여주는 메서드
     public void userInfo(User user) {
-
-        System.out.println("\n========== 회원 정보 ==========");
+        System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ SeSeSe Bank ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+        System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 회원 정보 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
         System.out.println("# 이름 : " + user.getName());
         System.out.println("# 아이디 : " + user.getBankId());
         System.out.println("# 가입일 : " + user.getNowDate());
-        System.out.println("\n===== 보유 계좌 =====");
+        System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 보유 계좌 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
 
         // 통장 호출시 번호를 매기기 위한 지역변수
         int accountCount = 1;
@@ -32,9 +32,9 @@ public class UserInfoJW {
             System.out.println("# 최대 이체 한도 : " + account.getSingleTransferLimit());
             accountCount++;
         }
-        System.out.println("================");
+        System.out.println(" ☐ □ ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎");
         user.setMyMoney(totalBalance);
-        System.out.println("\n# 총 잔액 : " + user.getMyMoney() + "원");
+        System.out.println("\n 🧼 총 잔액 : " + user.getMyMoney() + "원");
     }
 
 
@@ -47,6 +47,6 @@ public class UserInfoJW {
             case TRANSFER:
                 return "입출금통장";
         }
-        return "보유 통장 X";
+        return "보유 통장 없음";
     }
 }

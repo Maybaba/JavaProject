@@ -4,13 +4,15 @@ import java.util.Scanner;
 
 import static user.DayAccountsYJ.*;
 import static user.DepositViewYJ.viewFixedAccountStatus;
+import static user.FixedAccountYJ.userFixedAccount;
+import static user.SavingAccountYJ.userSavingAccount;
 import static util.SimpleInput.input;
 
 public class DepositCtrlYJ {
     //controller
     public static void depositMenu(User user) {
-        AccountBalanceAccessorYJ.updateBalances(user);
-        System.out.printf("\n 🧼 ======== 마이 예적금 페이지 ==== sesese-bank와 [ %s일 째 ] ======== 🧼 \n", dayCount);
+
+        System.out.printf("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 마이 예적금 ==== sesese-bank와 [ %s일 째 ] ======== 🧼 \n", dayCount);
         System.out.println(" 1. 나의 적금 ");
         System.out.println(" 2. 나의 예금 ");
         System.out.println(" 0. 뒤로 가기 (나가기) ");
@@ -36,9 +38,21 @@ public class DepositCtrlYJ {
 
             case "*": // 다음날로, 하루 +
                 moveToNextDay();
+
                 System.out.println(" 잠 드는 중 ... \n press any key ...");
                 Scanner sc = new Scanner(System.in);
                 sc.nextLine();
+
+                //예적금 이율계산코드
+                System.out.println("\n 🧼 마이 예금 ∙ 적금 오늘의 이율 연동중 . . .  sesese-bank 🧼 \n");
+
+                userSavingAccount(user);
+                System.out.println(" \n press any key ...");
+                sc.nextLine();
+                userFixedAccount(user);
+                System.out.println(" \n press any key ...");
+                sc.nextLine();
+
                 depositMenu(user); //이전의 메뉴 돌아가기
                 break;
 
