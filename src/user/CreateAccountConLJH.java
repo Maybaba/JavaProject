@@ -31,7 +31,12 @@ public class CreateAccountConLJH extends Account {
                     System.out.println("현재 가입하실 수 있는 예금 상품으로는 금리 일 5%의 상품이 있습니다.");
                     Thread.sleep(1500);
                     while (true) {
-                        int fixed = Integer.parseInt(input("가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n>> "));
+                        int fixed = 0;
+                        try {
+                            fixed = Integer.parseInt(input("가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n>> ").replace(" ",""));
+                        } catch (NumberFormatException e) {
+                            System.out.println("숫자를 입력해주세요");
+                        }
                         if (fixed == 1) {
                             System.out.println("\n예금 계좌를 생성합니다.");
                             Thread.sleep(800);
@@ -52,7 +57,12 @@ public class CreateAccountConLJH extends Account {
                     System.out.println("현재 가입하실 수 있는 적금 상품으로는 금리 일 1%의 상품이 있습니다.");
                     Thread.sleep(1500);
                     while (true) {
-                        int saving = Integer.parseInt(input("가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n>> "));
+                        int saving = 0;
+                        try {
+                            saving = Integer.parseInt(input("가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n>> ").replace(" ",""));
+                        } catch (NumberFormatException e) {
+                            System.out.println("숫자를 입력해주세요");
+                        }
                         if (saving == 1) {
                             System.out.println("\n적금 계좌를 생성합니다.");
                             createSaving(user);
@@ -69,7 +79,13 @@ public class CreateAccountConLJH extends Account {
                     System.out.println("\n입출금 계좌를 선택하셨습니다.");
                     Thread.sleep(1000);
                     while (true) {
-                        int saving = Integer.parseInt(input("가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n>> "));
+
+                        int saving = 0;
+                        try {
+                            saving = Integer.parseInt(input("가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n>> ").replace(" ",""));
+                        } catch (NumberFormatException e) {
+                            System.out.println("숫자를 입력해주세요");
+                        }
                         if (saving == 1) {
                             System.out.println("\n입출금 계좌를 생성합니다.");
                             createTransfer(user);
