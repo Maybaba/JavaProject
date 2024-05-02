@@ -43,7 +43,7 @@ public class CreateAccountConLJH extends Account {
                             break;
                         } else {
                             System.out.println("올바른 메뉴번호를 입력해주세요.");
-                        } break;
+                        }
                     }break;
 
                 case "2":
@@ -63,7 +63,7 @@ public class CreateAccountConLJH extends Account {
                             break;
                         } else {
                             System.out.println("올바른 메뉴번호를 입력해주세요.");
-                        } break;
+                        }
                     } break;
                 case "3":
                     System.out.println("\n입출금 계좌를 선택하셨습니다.");
@@ -81,7 +81,7 @@ public class CreateAccountConLJH extends Account {
                             // 메뉴이동
                         } else {
                             System.out.println("올바른 메뉴번호를 입력해주세요.");
-                        } break;
+                        }
                     }break;
 
                 case "4":
@@ -104,6 +104,7 @@ public class CreateAccountConLJH extends Account {
             String exit = input("- 이전화면으로 가시겠습니까? [y/n]\n>> ");
             if (exit.equals("y")) {
                 System.out.println("이전화면으로 돌아갑니다.");
+
                 return true;
             } else if (exit.equals("n")) {
                 createView();
