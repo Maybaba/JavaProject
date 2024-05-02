@@ -10,7 +10,7 @@ public class User {
     //이름
     private String name;
     //계좌정보
-    private static List<Account> myAccount;
+    private List<Account> myAccount;
     // 아이디
     private String bankId;
     // 비밀번호
@@ -48,7 +48,7 @@ public class User {
         this.name = name;
     }
 
-    public static List<Account> getMyAccount() {
+    public List<Account> getMyAccount() {
         return myAccount;
     }
 

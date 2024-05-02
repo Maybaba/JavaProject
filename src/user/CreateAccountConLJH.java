@@ -43,7 +43,7 @@ public class CreateAccountConLJH extends Account {
                             break;
                         } else {
                             System.out.println("올바른 메뉴번호를 입력해주세요.");
-                        } break;
+                        }
                     }break;
 
                 case "2":
@@ -63,7 +63,7 @@ public class CreateAccountConLJH extends Account {
                             break;
                         } else {
                             System.out.println("올바른 메뉴번호를 입력해주세요.");
-                        } break;
+                        }
                     } break;
                 case "3":
                     System.out.println("\n입출금 계좌를 선택하셨습니다.");
@@ -81,7 +81,7 @@ public class CreateAccountConLJH extends Account {
                             // 메뉴이동
                         } else {
                             System.out.println("올바른 메뉴번호를 입력해주세요.");
-                        } break;
+                        }
                     }break;
 
                 case "4":

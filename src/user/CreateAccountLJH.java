@@ -52,8 +52,8 @@ public class CreateAccountLJH extends Account  {
             } catch (InterruptedException e) {
                 System.out.println("처리중 입니다 . . . . .");
             }
-            try {
 
+            try {
             // 입출금 계좌 생성
             long balance = 0;
 //            Thread.sleep(1200);

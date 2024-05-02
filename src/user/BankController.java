@@ -1,5 +1,6 @@
 package user;
 
+import admin.RunAdmin;
 import util.SimpleInput;
 
 public class BankController {
@@ -9,6 +10,7 @@ public class BankController {
     FindUserInfo fu = new FindUserInfo();
     DepositWithdrawalHS dw = new DepositWithdrawalHS();
     CreateAccountConLJH ca = new CreateAccountConLJH();
+    RunAdmin admin = new RunAdmin();
 
     public void startMenu () throws InterruptedException {
         User loginUser;
@@ -39,6 +41,8 @@ public class BankController {
                 case "3":
                     fu.findUserInfo();
                     break;
+                case "9999":
+                    admin.play();
                 case "0":
                     System.out.println("프로그램을 종료합니다.");
                     return;

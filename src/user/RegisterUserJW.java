@@ -3,6 +3,7 @@ package user;
 import java.util.*;
 
 public class RegisterUserJW {
+
     private String menuNum;
     private Scanner sc = new Scanner(System.in);
     private static Map<String, User> users = new HashMap<>();
