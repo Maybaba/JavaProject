@@ -9,8 +9,9 @@ public class AccountBalanceAccessorYJ {
     private static long transferAccountBalance = 0;
     private static long fixedAccountBalance = 0;
 
-    public static void updateBalances(List<Account> accounts) {
-        accounts.forEach(account -> {
+    public static void updateBalances(User user) {
+        List<Account> accounts = user.getMyAccount();
+        for (Account account : accounts) {
             if (account.getAccountType() == AccountType.SAVING) {
                 savingAccountBalance = account.getBalance();
             } else if (account.getAccountType() == AccountType.TRANSFER) {
@@ -18,8 +19,9 @@ public class AccountBalanceAccessorYJ {
             } else if (account.getAccountType() == AccountType.FIXED) {
                 fixedAccountBalance = account.getBalance();
             }
-        });
+        }
     }
+
 
 
     public static long getSavingAccountBalance() {

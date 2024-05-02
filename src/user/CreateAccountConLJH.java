@@ -104,6 +104,7 @@ public class CreateAccountConLJH extends Account {
             String exit = input("- 이전화면으로 가시겠습니까? [y/n]\n>> ");
             if (exit.equals("y")) {
                 System.out.println("이전화면으로 돌아갑니다.");
+
                 return true;
             } else if (exit.equals("n")) {
                 createView();

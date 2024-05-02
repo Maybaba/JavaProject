@@ -3,6 +3,8 @@ package user;
 import admin.RunAdmin;
 import util.SimpleInput;
 
+import static user.DepositCtrlYJ.depositMenu;
+
 public class BankController {
     RegisterUserJW ru = new RegisterUserJW();
     LoginJW login = new LoginJW();
@@ -76,6 +78,7 @@ public class BankController {
                     CreateAccountConLJH.createAccount(user);
                     break;
                 case "4":
+                    depositMenu(user);
                     break;
                 case "0":
                     System.out.printf("%s님 안녕히가세요!\n", user.getName());

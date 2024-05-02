@@ -67,11 +67,14 @@ public class RegisterUserJW {
                 }
             }
             while (true) {
-                System.out.print("비밀번호를 입력하세요\n >> ");
+                System.out.print("비밀번호를 입력하세요(8~12자)\n >> ");
                 bankPassword1 = sc.nextLine().trim();
                 if (bankPassword1.equals("x")) break exit;
+
                 if (bankPassword1.trim().isEmpty()) {
                     System.out.println("비밀번호를 입력해 주세요.");
+                } else if (bankPassword1.length() < 8 || bankPassword1.length() > 12) {
+                    System.out.println("비밀번호를 8~12자로 입력해 주세요.");
                 } else {
                     // 비밀번호, 비밀번호 확인 총 2번을 입력받는다.
                     // 2번에 걸쳐 입력받은 비밀번호들이 일치하는지에 대한 여부를 검증

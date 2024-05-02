@@ -9,7 +9,7 @@ import static user.CreateAccountLJH.generateAccountNumber;
 public class Account  {
 
     //field
-    private static AccountType accountType;
+    private AccountType accountType;
     private String accountNum; //계좌번호
     private long balance;  // 계좌잔액
 //    private User user;  // 나의정보
@@ -54,7 +54,7 @@ public class Account  {
 //        this.user = user;
 //    }
 
-    public static AccountType getAccountType() {
+    public AccountType getAccountType() {
         return accountType;
     }
 

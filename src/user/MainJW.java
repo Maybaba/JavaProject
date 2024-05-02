@@ -15,14 +15,9 @@ public class MainJW {
         testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.FIXED, "1"));
         testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.SAVING, "1"));
         testUser.getMyAccount().add(new CreateAccountLJH(100, testUser, 1234, AccountType.TRANSFER, "1"));
-//        System.out.println(user);
+//       System.out.println(user);
 
         DepositWithdrawalHS test3 = new DepositWithdrawalHS();
-        //test3.run(testUser);
-
-        //예적금코드 바로 실험하기
-        DepositCtrlYJ TC = new DepositCtrlYJ();
-        TC.depositMenu(testUser);
-
+        test3.run(testUser);
     }
 }
