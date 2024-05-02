@@ -81,7 +81,7 @@ public class FindUserInfo {
                 while (true) {
                     System.out.printf("%s 아이디의 비밀번호를 변경합니다.\n", inputId);
                     System.out.println("변경할 비밀번호를 입력하세요.(8~12자)");
-                    String inputPassword = SimpleInput.input(">> ").trim();
+                    String inputPassword = SimpleInput.input(">> ").trim().replace(" ", "");
                     if (inputPassword.equals("x")) return;
                     if (inputPassword.isEmpty()) {
                         System.out.println("비밀번호를 입력해 주세요.(공백, 띄워쓰기 제외)");

@@ -42,7 +42,7 @@ public class RegisterUserJW {
             while (true) {
                 System.out.print("이름를 입력하세요\n >> ");
                 // 이름, 아이디, 비밀번호를 입력받을 시 trim 을 통해 공백(띄워쓰기)을 없앤 상태로 저장
-                userName = sc.nextLine().trim();
+                userName = sc.nextLine().trim().replace(" ", "");
                 if (userName.equals("x")) break exit;
                 // 1. 입력한 이름이 공백이거나, 띄워쓰기만 했을경우 경고문 출력 후 다시 이름 입력받음
                 if (userName.isEmpty()) {
@@ -53,7 +53,7 @@ public class RegisterUserJW {
             }
             while (true) {
                 System.out.print("아이디를 입력하세요\n >> ");
-                bankId = sc.nextLine().trim();
+                bankId = sc.nextLine().trim().replace(" ", "");
                 if (bankId.equals("x")) break exit;
                 // 2. 아이디도 이름과 마찬가지로 공백, 띄워쓰기 여부를 검증함
                 if (bankId.isEmpty()) {
@@ -68,7 +68,7 @@ public class RegisterUserJW {
             }
             while (true) {
                 System.out.print("비밀번호를 입력하세요(8~12자)\n >> ");
-                bankPassword1 = sc.nextLine().trim();
+                bankPassword1 = sc.nextLine().trim().replace(" ", "");
                 if (bankPassword1.equals("x")) break exit;
 
                 if (bankPassword1.trim().isEmpty()) {
@@ -80,7 +80,7 @@ public class RegisterUserJW {
                     // 2번에 걸쳐 입력받은 비밀번호들이 일치하는지에 대한 여부를 검증
                     // 일치한다면 회원가입 성공, 불일치 할 경우 다시 비밀번호를 입력받는다.
                     System.out.print("비밀번호를 확인\n >> ");
-                    String bankPassword2 = sc.nextLine().trim();
+                    String bankPassword2 = sc.nextLine().trim().replace(" ", "");
                     if (bankPassword2.equals("x")) break exit;
                     if (isSamePassword(bankPassword1, bankPassword2)) {
                         break;
@@ -92,7 +92,7 @@ public class RegisterUserJW {
             while (true) {
                 System.out.print("자신의 보물 1호(비밀번호 힌트)를 입력하세요\n >> ");
                 // 이름, 아이디, 비밀번호를 입력받을 시 trim 을 통해 공백(띄워쓰기)을 없앤 상태로 저장
-                userTreasure = sc.nextLine().trim();
+                userTreasure = sc.nextLine().trim().replace(" ", "");
                 if (userTreasure.equals("x")) break exit;
                 // 1. 입력한 이름이 공백이거나, 띄워쓰기만 했을경우 경고문 출력 후 다시 이름 입력받음
                 if (userTreasure.isEmpty()) {
