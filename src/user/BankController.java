@@ -18,14 +18,13 @@ public class BankController {
         User loginUser;
 
         while (true) {
-            System.out.println("\n========== SeSeSe Bank! ==========");
-            System.out.println("1. 회원가입");
-            System.out.println("2. 로그인");
-            System.out.println("3. 아이디 & 비밀번호 변경");
-            System.out.println("0. 프로그램 종료");
-            System.out.println("==================================");
-            System.out.println("메뉴를 선택하세요.");
-            String menuNum = SimpleInput.input(">> ");
+            System.out.println("\n 🧼 ========== SeSeSe Bank! ========== 🧼 ");
+            System.out.println(" 1. 회원가입");
+            System.out.println(" 2. 로그인");
+            System.out.println(" 3. 아이디 & 비밀번호 변경");
+            System.out.println(" 0. 프로그램 종료");
+            System.out.println("\n 🧼 ====== 원하시는 메뉴를 선택해주세요 ====== 🧼 ");
+            String menuNum = SimpleInput.input(" □▫∙︎ ︎");
 
             switch (menuNum) {
                 case "1":
@@ -42,10 +41,10 @@ public class BankController {
                     admin.play();
                     break;
                 case "0":
-                    System.out.println("프로그램을 종료합니다.");
+                    System.out.println(" 🪬 프로그램을 종료합니다 🪬 ");
                     return;
                 default:
-                    System.out.println("정확한 메뉴 번호를 입력해 주세요.");
+                    System.out.println(" 👻 정확한 메뉴 번호를 입력해 주세요 👻 ");
                     break;
             }
         }
@@ -54,15 +53,15 @@ public class BankController {
 
     private void mainMenu(User user) throws InterruptedException {
         while (true) {
-            System.out.println("\n========== SeSeSe Bank! ==========");
-            System.out.println("# 1. 마이페이지");
-            System.out.println("# 2. 입-출금");
-            System.out.println("# 3. 계좌 개설");
-            System.out.println("# 4. 예금, 적금 페이지");
-            System.out.println("# 0. 로그아웃");
-            System.out.println("=====================================");
+            System.out.println("\n 🧼 ========== SeSeSe Bank! ========== 🧼 ");
+            System.out.println(" 1. 마이페이지");
+            System.out.println(" 2. 입-출금");
+            System.out.println(" 3. 계좌 개설");
+            System.out.println(" 4. 예금, 적금 페이지");
+            System.out.println(" 0. 로그아웃");
+            System.out.println("\n 🧼 ====== 원하시는 메뉴를 선택해주세요 ====== 🧼 ");
             System.out.println("메뉴를 선택하세요.");
-            String mainMenuNum = SimpleInput.input(">> ");
+            String mainMenuNum = SimpleInput.input(" □▫∙︎ ︎");
             switch (mainMenuNum) {
                 case "1":
                     userInfo.userInfo(user);
@@ -77,10 +76,10 @@ public class BankController {
                     depositMenu(user);
                     break;
                 case "0":
-                    System.out.printf("%s님 안녕히가세요!\n", user.getName());
+                    System.out.printf(" ∙ ◻︎ %s님이 로그아웃 하였습니다. ◻︎ ▫ ︎\n", user.getName());
                     return;
                 default:
-                    System.out.println("정확한 메뉴 번호를 입력해 주세요.");
+                    System.out.println(" 👻 정확한 메뉴 번호를 입력해 주세요 👻 ");
                     break;
             }
         }
