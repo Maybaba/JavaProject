@@ -16,7 +16,7 @@ class DayAccountsYJ {
     //하루가 지났는지 확인 및 초기화 필드
     static int nextDay; // CHECKNEXTDAY가 계속 0으로 초기화 되어야 함
     static int nextDaya; // CHECKNEXTDAY가 계속 0으로 초기화 되어야 함
-    static int nextDay = 0; // CHECKNEXTDAY가 계속 0으로 초기화 되어야 함
+
 
 
     // 현재 날짜를 이전 날짜로 업데이트하고 현재 날짜를 새로운 날짜로 설정

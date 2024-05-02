@@ -47,17 +47,19 @@ public class FindUserInfo {
             System.out.printf("%s님의 가입정보가 존재하지 않습니다.", inputName);
             return;
         }
+        boolean isTreasure = false;
         System.out.println("\n 자신의 보물 1호를 입력하세요.");
         String inputTreasure = user.SimpleInput.input(">> ");
         findId : for (String s : users.keySet()) {
             if(users.get(s).getMyTreasure().equals(inputTreasure)) {
                 System.out.printf("%s님의 아이디는 %s입니다.\n", inputName, s);
+                isTreasure = true;
                 break findId;
-            } else {
-                System.out.printf("%s님의 보물 1호는 %s가 아닙니다.\n", inputName, inputTreasure);
             }
         }
-
+        if(!isTreasure) {
+            System.out.printf("%s님의 보물 1호는 %s가 아닙니다.", inputName, inputTreasure);
+        }
     }
 
     private void findPassword () {
@@ -78,12 +80,14 @@ public class FindUserInfo {
 
                 while (true) {
                     System.out.printf("%s 아이디의 비밀번호를 변경합니다.\n", inputId);
-                    System.out.println("변경할 비밀번호를 입력하세요.");
+                    System.out.println("변경할 비밀번호를 입력하세요.(8~12자)");
                     String inputPassword = SimpleInput.input(">> ").trim();
                     if (inputPassword.equals("x")) return;
                     if (inputPassword.isEmpty()) {
                         System.out.println("비밀번호를 입력해 주세요.(공백, 띄워쓰기 제외)");
-                    } else {
+                    } else if (inputPassword.length() < 8 || inputPassword.length() > 12) {
+                        System.out.println("비밀번호를 8~12자로 입력해 주세요.");
+                    }else {
                         System.out.println("비밀번호 확인");
                         String inputPassword2 = SimpleInput.input(">> ").trim();
 
