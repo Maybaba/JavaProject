@@ -32,9 +32,8 @@ public class UserInfoJW {
         System.out.println("================");
         user.setMyMoney(totalBalance);
         System.out.println("\n# 총 잔액 : " + user.getMyMoney() + "원");
-
-
     }
+
 
     public String accountType (AccountType type) {
         switch (type) {
