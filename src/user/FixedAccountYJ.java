@@ -8,7 +8,7 @@ import static user.AccountBalanceAccessorYJ.*;
 class FixedAccountYJ {
 
     //다른 함수에서 참조해도 값 유지 위해 field -> static 으로 선언
-    private static long fixedBalance = 111111;//getFixedAccountBalance();
+    private static long fixedBalance = getFixedAccountBalance();
     //예금계좌 이자율 : 5%
     private static double fixedInterestRate = 0.05;
 
@@ -20,7 +20,7 @@ class FixedAccountYJ {
         System.out.println("\n 🧼 마이예금 이율 연동 중 . . . sesese-bank 🧼 \n");
 
                 //하루 지났을때 원금에 예금 이자 더해주기
-                if (checkNextDay()) {
+                if (checkNextDay2()) {
                     System.out.println("실험용 예금액 = " + fixedBalance);
 
                     double interest = fixedBalance * fixedInterestRate;

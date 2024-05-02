@@ -35,7 +35,6 @@ public class Main {
 //            totalMoney.getTotalMoney();
 //        }
 
-
         // 2번을 입력 받았을 때 전체 고객 정보를 반환하는 기능
         if (menuNumber == 2) {
             OutputView getInfo = new OutputView();
