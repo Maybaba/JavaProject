@@ -20,12 +20,8 @@ public class BankController {
         User loginUser;
 
         while (true) {
-<<<<<<< HEAD
-            System.out.println("\n 🧼 ========== SeSeSe Bank! ========== 🧼 ");
-=======
 
             System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ SeSeSe Bank ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
->>>>>>> 6359305 (로그인 수정중)
             System.out.println(" 1. 회원가입");
             System.out.println(" 2. 로그인");
             System.out.println(" 3. 아이디 & 비밀번호 변경");

@@ -8,7 +8,9 @@ public class MainJW {
     public static void main(String[] args) throws InterruptedException {
         RegisterUserJW test = new RegisterUserJW();
         LoginJW test2 = new LoginJW();
+
         test.test();
+
         User user = test2.login();
         User testUser = RegisterUserJW.getUsers().get("qwe");
 
