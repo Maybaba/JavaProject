@@ -56,6 +56,7 @@ class DayAccountsYJ {
     // 하루를 초기화하는 메서드
     static void resetDay() {
         nextDay = 0;
+        dayCount = 0;
     }
 
     public static int getDayAccount() {

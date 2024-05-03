@@ -2,6 +2,8 @@ package user;
 
 import java.util.*;
 
+import static user.DayAccountsYJ.resetDay;
+
 public class RegisterUserJW {
 
     private String menuNum;
@@ -103,6 +105,7 @@ public class RegisterUserJW {
             // 입력받은 이름, 아이디, 비밀번호를 가지고 새로운 User 객체를 생성 후
             // Map<String, User>에 저장
             users.put(bankId, new User(userName, bankId, bankPassword1, userTreasure));
+            resetDay();
             System.out.printf(" ☐ □ %s님의 회원가입이 완료되었습니다. □ ∙ \n", userName);
             break;
         }

@@ -62,13 +62,13 @@ public class FindUserInfo {
     }
 
     private void findPassword () {
-        System.out.println("\n비밀번호를 입력하세요.");
+        System.out.println("\n아이디를 입력하세요.");
         System.out.println("비밀번호 변경을 중단하시려면 'x'를 입력해 주세요.");
         String inputId = SimpleInput.input(" □▫∙︎ ");
         Map<String, User> users = RegisterUserJW.getUsers();
         if(inputId.equals("x")) return;
         if(!users.containsKey(inputId)) {
-            System.out.println("⁉️ 해당 비밀번호는 존재하지 않습니다.");
+            System.out.println("⁉️ 해당 아이디는 존재하지 않습니다.");
         } else {
             System.out.println("\n자신의 보물 1호를 입력해 주세요.");
             String inputTreasure = SimpleInput.input(" □▫∙︎ ");

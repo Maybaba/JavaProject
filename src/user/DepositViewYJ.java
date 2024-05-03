@@ -11,13 +11,13 @@ import static util.SimpleInput.*;
 public class DepositViewYJ {
 
     //나의 적금계좌 보기
-    public static void viewSavingAccountStatus(User testUser) {
-    getBalances(testUser);
+    public static void viewSavingAccountStatus(User user) {
+    getBalances(user);
         //자동넘어감 방지 stop 하기 위한 코드
         Scanner s = new Scanner(System.in);
 
         //나의 적금 현황
-        System.out.printf("\n  ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ ∙ ・ %s 님의 적금계좌 ◻︎ □ ▫︎▫︎▫︎▫︎▫︎▫︎▫︎  \n",testUser.getName());
+        System.out.printf("\n  ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ ∙ ・ %s 님의 적금계좌 ◻︎ □ ▫︎▫︎▫︎▫︎▫︎▫︎▫︎  \n",user.getName());
         System.out.printf("\n              sesese-bank 와 [ %s일 째 ]🫧\n", dayCount);
 
         System.out.printf(" ✦ 나의 적금계좌 잔액 [%d]원 \n\n", getSavingAccountBalance());
@@ -37,10 +37,10 @@ public class DepositViewYJ {
 
             switch (menuNum) {
                 case "1": //적금계좌에 더 입금하고 싶을 때
-                    addSavingAccountBalance(testUser);
+                    addSavingAccountBalance(user);
 
                 case "0": //뒤로 가기
-                    depositMenu(testUser);
+                    depositMenu(user);
                     break d;
 
                 default: //이외의 값을 선택했을 때
@@ -50,12 +50,12 @@ public class DepositViewYJ {
         }
     }
     //나의 예금계좌 보기
-    public static void viewFixedAccountStatus(User testUser) {
+    public static void viewFixedAccountStatus(User user) {
 
         //자동넘어감 방지 코드
         Scanner s = new Scanner(System.in);
 
-        System.out.printf("\n  ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ ∙ ・ %s 님의 예금계좌 ◻︎ □ ▫︎▫︎▫︎▫︎▫︎▫︎▫︎  \n",testUser.getName());
+        System.out.printf("\n  ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ ∙ ・ %s 님의 예금계좌 ◻︎ □ ▫︎▫︎▫︎▫︎▫︎▫︎▫︎  \n",user.getName());
 
         System.out.printf(" ♦︎ 나의 예금계좌 잔액 [%d 원] \n", getFixedAccountBalance());
         System.out.println(" ✧ 나의 예금계좌 이율 [ 5 % ] \n");
@@ -76,7 +76,7 @@ public class DepositViewYJ {
                         break;
 
                     case "0": //뒤로 가기
-                        depositMenu(testUser);
+                        depositMenu(user);
                         break d;
 
                     default: //이외의 값을 선택했을 때
