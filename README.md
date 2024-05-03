@@ -53,13 +53,33 @@ JAVA - INTELLI J
      → 업데이트하는 메서드를 이율 메서드에 추가함으로서 해결함
 
 ### * 입출금 기능, ppt 작성 - 김한솔
-     → 없음.
+  → 없음
 
    
 ## 개발 일정
 - 2024.04.25 ~ 2024.05.07
   
 ## 예시 화면
+
+![회원가입](https://github.com/BankProject7777777/seseseBank/assets/70048630/bd7948b2-1424-4a0e-a5fb-b7ba2fb29823)</div>
+
+![로그인](https://github.com/BankProject7777777/seseseBank/assets/70048630/2e5cafda-0665-4b90-a041-020eb6114718)
+
+![아이디:비밀번호 찾기](https://github.com/BankProject7777777/seseseBank/assets/70048630/223fabe3-d228-41fb-919b-a5f63723675c)
+
+![계좌개설](https://github.com/BankProject7777777/seseseBank/assets/70048630/b4127ca6-2634-496d-8b7c-a1c08f4ee778)
+
+![계좌개설2](https://github.com/BankProject7777777/seseseBank/assets/70048630/8f117428-bde2-49b5-af16-2d55f8bd74df)
+
+![예적금시스템1](https://github.com/BankProject7777777/seseseBank/assets/70048630/f621eeed-eb7f-4dae-9df6-76098eff3aef)
+
+![예적금시스템2](https://github.com/BankProject7777777/seseseBank/assets/70048630/14baa760-df25-4142-8c58-8de8ea473e20)
+
+![입출금시스템](https://github.com/BankProject7777777/seseseBank/assets/70048630/222de2fc-a728-443a-ae17-19b50497c996)
+
+![마이페이지](https://github.com/BankProject7777777/seseseBank/assets/70048630/4fa1fe82-a845-4585-a3d8-d47993873f35)
+
+
 
 ## 업데이트 예정
 1. 주식 시스템
