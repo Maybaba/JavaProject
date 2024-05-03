@@ -1,4 +1,11 @@
-<div align ="center"><br>SeSeSe Bank</div>
+<h1></h1>
+<div align ="center"><br>
+  
+# ### SeSeSe Bank ### ###
+<br></div>
+
+<div align ="right"><b>7조 김은지 임제훈 김한솔 박진우 신윤종</b></div>
+
 
 ---
 ## 목차
@@ -61,23 +68,26 @@ JAVA - INTELLI J
   
 ## 예시 화면
 
-![회원가입](https://github.com/BankProject7777777/seseseBank/assets/70048630/bd7948b2-1424-4a0e-a5fb-b7ba2fb29823)</div>
-
-![로그인](https://github.com/BankProject7777777/seseseBank/assets/70048630/2e5cafda-0665-4b90-a041-020eb6114718)
-
-![아이디:비밀번호 찾기](https://github.com/BankProject7777777/seseseBank/assets/70048630/223fabe3-d228-41fb-919b-a5f63723675c)
-
-![계좌개설](https://github.com/BankProject7777777/seseseBank/assets/70048630/b4127ca6-2634-496d-8b7c-a1c08f4ee778)
-
-![계좌개설2](https://github.com/BankProject7777777/seseseBank/assets/70048630/8f117428-bde2-49b5-af16-2d55f8bd74df)
-
-![예적금시스템1](https://github.com/BankProject7777777/seseseBank/assets/70048630/f621eeed-eb7f-4dae-9df6-76098eff3aef)
-
-![예적금시스템2](https://github.com/BankProject7777777/seseseBank/assets/70048630/14baa760-df25-4142-8c58-8de8ea473e20)
-
-![입출금시스템](https://github.com/BankProject7777777/seseseBank/assets/70048630/222de2fc-a728-443a-ae17-19b50497c996)
-
-![마이페이지](https://github.com/BankProject7777777/seseseBank/assets/70048630/4fa1fe82-a845-4585-a3d8-d47993873f35)
+<div align="center">
+    <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/bd7948b2-1424-4a0e-a5fb-b7ba2fb29823" alt="예시 화면">
+      <h2>사용자의 아이디를 생성할 수 있습니다.</h2><br>
+    <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/2e5cafda-0665-4b90-a041-020eb6114718" alt="로고인">
+      <h2>로그인을 통해 메인메뉴로 접속합니다.</h2><br>
+    <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/223fabe3-d228-41fb-919b-a5f63723675c" alt="아이디:비밀번호 창기">
+      <h2>사용자가 아이디를 찾고 비밀번호를 찾아 변경할 수 있습니다.</h2><br>
+    <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/b4127ca6-2634-496d-8b7c-a1c08f4ee778" alt="계좌개설">
+      <h2>입출금 계좌가 없을 시 입출금, 예적금계좌 생성이 제한됩니다.<br>사용자는 입출금계좌를 생성할 수 있습니다.</h2><br>
+    <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/8f117428-bde2-49b5-af16-2d55f8bd74df" alt="계좌개설2">
+      <h2>사용자는 예금, 적금 상품에 가입할 수 있습니다..</h2><br>
+    <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/f621eeed-eb7f-4dae-9df6-76098eff3aef" alt="예측금시스템1">
+      <h2>사용자의 예금및 적금 현황을 확인할 수있습니다. 적금에는 추가입금이 가능합니다.</h2><br>
+    <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/14baa760-df25-4142-8c58-8de8ea473e20" alt="예측금시스템2">
+      <h2>예적금의 유동사항을 구현하기 위해 날짜기능을 추가했습니다.<br>다음날로 넘어가면 이율이 붙는 것을 확인 할 수 있습니다.</h2><br>
+    <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/222de2fc-a728-443a-ae17-19b50497c996" alt="입출금시스템">
+      <h2>사용자가 입출금 계좌에 돈을 입금하거나 출금 할 수 있습니다.</h2><br>
+    <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/4fa1fe82-a845-4585-a3d8-d47993873f35" alt="마이페이지">
+      <h2>해당 사용자가 소유한 모든 계좌의 상태를 확인합니다.</h2><br>
+</div>
 
 
 
