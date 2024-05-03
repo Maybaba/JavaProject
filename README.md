@@ -30,8 +30,11 @@
 |신윤종|BACK|https://github.com/Maybaba|
 
 ## 기술 스택
-JAVA - INTELLI J
-## 프로젝트 소개
+<div align ="center">
+<img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/b584e417-3f78-45b6-8efb-417bd0d5fdb5" alt="java">
+<img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/43829efc-39f9-415b-a8d7-29f0a0b67bf8" alt="git">
+
+</div>
 
 ## 트러블 슈팅
 ### * 적금, 예금, 입출금 계좌개설 및 입금 - 임제훈
@@ -62,11 +65,16 @@ JAVA - INTELLI J
 ### * 입출금 기능, ppt 작성 - 김한솔
   → 없음
 
+
+
+
    
 ## 개발 일정
 - 2024.04.25 ~ 2024.05.07
+
+
   
-## 예시 화면
+## 프로젝트 소개
 
 <div align="center">
     <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/bd7948b2-1424-4a0e-a5fb-b7ba2fb29823" alt="예시 화면">
