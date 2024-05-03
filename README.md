@@ -30,9 +30,9 @@
 |신윤종|BACK|https://github.com/Maybaba|
 
 ## 기술 스택
-<div align ="right">
+<div align ="center">
 <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/b584e417-3f78-45b6-8efb-417bd0d5fdb5" alt="java">
-<img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/43829efc-39f9-415b-a8d7-29f0a0b67bf8" alt="git">
+<img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/56a071ae-bc25-4adb-a204-d3df63184904" alt="git">
 
 </div>
 
