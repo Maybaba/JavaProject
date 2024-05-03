@@ -19,8 +19,16 @@
 - 업데이트 예정
 
 ## 프로젝트 개요
-기존의 은행 서비스에는 많은 기능들이 있지만 보다 많은 기능으로 복잡해진 시스템에 불편이 있는 사용자를 위해 간소화 되었으며 사용자의 가입을 받고
-은행의 주된 기능인 예적금, 입출금 계좌개설 기능을 보다 효율적이고 정확한 전달을 할 수있는 시스템을 만드는 것을 목표로 진행되었습니다.<br>
+<div align ="center">
+  
+<img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/12e438a8-b9e9-45d4-ba90-10ff856692aa" alt="bank">
+
+</div>
+제테크와 같은 금융 서비스의 성장은 디지털화된 금융 서비스에 대한 수요 증가와 관련이 있습니다.<br>은행 서비스를 개발하는 프로젝트는 이러한 금융 서비스의
+디지털화를 지원하고 사용자에게 편리한 금융 서비스를 제공하는 데 도움이 될 것으로 예상됩니다.<br><br>
+기존의 은행 서비스에는 많은 기능들이 있지만 보다 많은 기능으로 복잡해진 시스템에 불편이 있는 사용자를 위해 간소화 되었으며 사용자의 가입을 받고<br>
+은행의 주된 기능인 예적금, 입출금 계좌개설 기능을 보다 효율적이고 정확한 전달을 할 수있는 시스템을 만드는 것을 목표로 진행되었습니다.<br><br><br>
+
 
 
 ## 팀원 소개
@@ -82,7 +90,7 @@
 
 <div align="center">
     <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/bd7948b2-1424-4a0e-a5fb-b7ba2fb29823" alt="예시 화면">
-      <h2>사용자의 아이디를 생성할 수 있습니다.</h2><br>
+      <h2>ID, PASSWORD, 이름, 회원정보 찾기위한 힌트 입력으로 회원가입을 합니다.</h2><br>
     <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/2e5cafda-0665-4b90-a041-020eb6114718" alt="로고인">
       <h2>로그인을 통해 메인메뉴로 접속합니다.</h2><br>
     <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/223fabe3-d228-41fb-919b-a5f63723675c" alt="아이디:비밀번호 창기">
@@ -96,7 +104,7 @@
     <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/14baa760-df25-4142-8c58-8de8ea473e20" alt="예측금시스템2">
       <h2>예적금의 유동사항을 구현하기 위해 날짜기능을 추가했습니다.<br>다음날로 넘어가면 이율이 붙는 것을 확인 할 수 있습니다.</h2><br>
     <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/222de2fc-a728-443a-ae17-19b50497c996" alt="입출금시스템">
-      <h2>사용자가 입출금 계좌에 돈을 입금하거나 출금 할 수 있습니다.</h2><br>
+      <h2>사용자가 입출금 계좌에 돈을 입금하거나 출금 할 수 있습니다.<br>잔액이 출금 요청보다 작을 경우 출금이 거부됩니다.</h2><br>
     <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/4fa1fe82-a845-4585-a3d8-d47993873f35" alt="마이페이지">
       <h2>해당 사용자가 소유한 모든 계좌의 상태를 확인합니다.</h2><br>
 </div>
