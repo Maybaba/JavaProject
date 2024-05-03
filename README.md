@@ -19,6 +19,9 @@
 - 업데이트 예정
 
 ## 프로젝트 개요
+기존의 은행 서비스에는 많은 기능들이 있지만 보다 많은 기능으로 복잡해진 시스템에 불편이 있는 사용자를 위해 간소화 되었으며 사용자의 가입을 받고
+은행의 주된 기능인 예적금, 입출금 계좌개설 기능을 보다 효율적이고 정확한 전달을 할 수있는 시스템을 만드는 것을 목표로 진행되었습니다.<br>
+
 
 ## 팀원 소개
 |팀원|담당|깃허브|
@@ -33,6 +36,7 @@
 <div align ="center">
 <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/b584e417-3f78-45b6-8efb-417bd0d5fdb5" alt="java">
 <img src="https://github.com/BankProject7777777/seseseBank/assets/70048630/56a071ae-bc25-4adb-a204-d3df63184904" alt="git">
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fei6Ehe%2FbtrbQbiTB7X%2FPxE6GEx9XudbZ8A3kTRpj1%2Fimg.png" alt="git">
 
 </div>
 
