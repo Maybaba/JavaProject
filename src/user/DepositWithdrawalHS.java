@@ -95,43 +95,53 @@ public class DepositWithdrawalHS {
 
 	// 출금 메서드
 	public void withdrawalFromAccount (User user) {
+//		input(
 		if(accountVerification(user).getBalance() == 0) {
 			System.out.println("⁉️ 출금 할 수 없습니다.(잔액 : 0원)");
 			return;
 		}
 		exit:  while (true) {
-			System.out.printf("\n출금하실 금액을 입력하세요\n현재 잔액: %d\n 취소하려면 [X]를 입력하세요\n", accountVerification(user).getBalance());
-			String withdrawalAmountStr = input(" □▫∙︎ ︎");
-			if (withdrawalAmountStr.equalsIgnoreCase("X")) break;
-			try {
-				long withdrawalAmount = Long.parseLong(withdrawalAmountStr);
-				if (withdrawalAmount <= 0) {
-					System.out.println("⁉️ 0보다 큰 정수를 입력해 주세요");
-					continue;
-				}
-				if (accountVerification(user).getBalance() < withdrawalAmount) { // 출금액이 잔액보다 적은지 확인
-					System.out.println("⁉️ 잔액이 부족합니다.");
-				}
-				while (true) {
-					System.out.printf("\n[ %s 원 ]을 출금하시겠습니까?\n 거래 후 예상 잔액: [ %d 원 ]\n1. 출금하기\n2. 취소하기\n", withdrawalAmount, accountVerification(user).getBalance()-withdrawalAmount);
-					String withdrawalCheck = input(" □▫∙︎ ︎");
-					try {
-						if (Long.parseLong(withdrawalCheck) == 1) {
-							accountVerification(user).setBalance(accountVerification(user).getBalance() - withdrawalAmount);
-							System.out.printf("◻︎ ▫ [ %d 원 ]이 출금되었습니다  ∙ ◻︎\n", withdrawalAmount);
-							System.out.println("♦︎ 잔액: " + accountVerification(user).getBalance()); // 출금 후 남은 잔액 출력
-							break exit;
-						} else if (Long.parseLong(withdrawalCheck) == 2) {
-							break exit;
-						} else {
+			System.out.println("\n비밀번호를 입력해 주세요");
+			String inputAccountPassword = input(" □▫∙︎ ︎");
+			if (Integer.parseInt(inputAccountPassword) != accountVerification(user).getAccountPassword()) {
+				System.out.println("⁉️ 비밀번호가 틀렸습니다.");
+				break;
+			}
+			while (true) {
+				System.out.printf("\n출금하실 금액을 입력하세요\n현재 잔액: %d\n 취소하려면 [X]를 입력하세요\n", accountVerification(user).getBalance());
+				String withdrawalAmountStr = input(" □▫∙︎ ︎");
+				if (withdrawalAmountStr.equalsIgnoreCase("X")) break exit;
+				try {
+					long withdrawalAmount = Long.parseLong(withdrawalAmountStr);
+					if (withdrawalAmount <= 0) {
+						System.out.println("⁉️ 0보다 큰 정수를 입력해 주세요");
+						continue;
+					}
+					if (accountVerification(user).getBalance() < withdrawalAmount) { // 출금액이 잔액보다 적은지 확인
+						System.out.println("⁉️ 잔액이 부족합니다.");
+						continue;
+					}
+					while (true) {
+						System.out.printf("\n[ %s 원 ]을 출금하시겠습니까?\n 거래 후 예상 잔액: [ %d 원 ]\n1. 출금하기\n2. 취소하기\n", withdrawalAmount, accountVerification(user).getBalance()-withdrawalAmount);
+						String withdrawalCheck = input(" □▫∙︎ ︎");
+						try {
+							if (Long.parseLong(withdrawalCheck) == 1) {
+								accountVerification(user).setBalance(accountVerification(user).getBalance() - withdrawalAmount);
+								System.out.printf("◻︎ ▫ [ %d 원 ]이 출금되었습니다  ∙ ◻︎\n", withdrawalAmount);
+								System.out.println("♦︎ 잔액: " + accountVerification(user).getBalance()); // 출금 후 남은 잔액 출력
+								break exit;
+							} else if (Long.parseLong(withdrawalCheck) == 2) {
+								break exit;
+							} else {
+								System.out.println("⁉️ 올바른 번호를 입력해 주세요");
+							}
+						} catch (NumberFormatException e) {
 							System.out.println("⁉️ 올바른 번호를 입력해 주세요");
 						}
-					} catch (NumberFormatException e) {
-						System.out.println("⁉️ 올바른 번호를 입력해 주세요");
 					}
+				} catch (NumberFormatException e) {
+					System.out.println("⁉️ 0보다 큰 정수를 입력해 주세요.");
 				}
-			} catch (NumberFormatException e) {
-				System.out.println("⁉️ 0보다 큰 정수를 입력해 주세요.");
 			}
 		}
 	}
