@@ -18,10 +18,10 @@ public class DepositViewYJ {
 
         //나의 적금 현황
         System.out.printf("\n  ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ ∙ ・ %s 님의 적금계좌 ◻︎ □ ▫︎▫︎▫︎▫︎▫︎▫︎▫︎  \n",user.getName());
-        System.out.printf("\n              sesese-bank 와 [ %s일 째 ]🫧\n", dayCount);
+        System.out.printf("\n              sesese-bank 와 [ %s일 째 ]🫧\n", user.getDayCount());
 
         System.out.printf(" ✦ 나의 적금계좌 잔액 [%d]원 \n\n", getSavingAccountBalance());
-        System.out.printf(" ♦︎ 매달 [%d 원] 적금하고 있어요 \n\n", getSavingAccountBalance());
+//        System.out.printf(" ♦︎ 매달 [%d 원] 적금하고 있어요 \n\n", getSavingAccountBalance());
         System.out.println(" ✧ 나의 적금계좌 이율 [ 1 % ] \n");
         System.out.println("(하루, 삼일이 지날때마다 이율은 중복으로 계산됩니다.)\n");
         System.out.println("press any key ...");

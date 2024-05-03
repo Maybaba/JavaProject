@@ -17,10 +17,12 @@ public class User {
     private String bankPassword;
     // 가입일자
     private LocalDate nowDate;
-    // 잔액 -
+    // 잔액
     private long myMoney;
     // 비밀번호 힌트 - 보물 1호
     private String myTreasure;
+    //다음날 넘어감
+    private int dayCount;
 
     public User(String name, String bankId, String bankPassword, String myTreasure) {
         this.name = name;
@@ -30,6 +32,19 @@ public class User {
         this.nowDate = LocalDate.now();
         this.myMoney = 0;
         this.myTreasure = myTreasure;
+        this.dayCount = 0;
+    }
+
+    public int getDayCount() {
+        return dayCount;
+    }
+
+    public void setDayCount(int dayCount) {
+        this.dayCount = dayCount;
+    }
+    //다음날로 넘어가는 코드
+    public void moveToNextDay() {
+        this.dayCount++;
     }
 
     public String getMyTreasure() {

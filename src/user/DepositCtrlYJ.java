@@ -12,8 +12,8 @@ public class DepositCtrlYJ {
     //controller
     public static void depositMenu(User user) {
 
-        System.out.printf("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 마이 예금 ∙ 적금 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 \n", dayCount);
-        System.out.printf("               sesese-bank 와 [ %s일 째 ]🫧\n", dayCount);
+        System.out.printf("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 마이 예금 ∙ 적금 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 \n",  user.getDayCount());
+        System.out.printf("               sesese-bank 와 [ %s일 째 ]🫧\n",  user.getDayCount());
 
         System.out.println(" 1. 나의 적금 ");
         System.out.println(" 2. 나의 예금 ");
@@ -39,7 +39,7 @@ public class DepositCtrlYJ {
                 return;//이거 이전의 메뉴
 
             case "*": // 다음날로, 하루 +
-                moveToNextDay();
+                user.moveToNextDay();
 
                 System.out.println(" 잠 드는 중 ... \n press any key ...");
                 Scanner sc = new Scanner(System.in);

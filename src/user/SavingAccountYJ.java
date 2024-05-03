@@ -15,10 +15,14 @@ class SavingAccountYJ {
     //적금계좌 이율 계산
     static void userSavingAccount(User user) {
 
+        //계좌 잔액 업데이트
+        savingBalance = getSavingAccountBalance();
+        transferBalance = getTransferAccountBalance();
+
         Scanner s = new Scanner(System.in);
 
         //하루당 이자율 한번만 계산
-        if (checkNextDay()) {
+        if (true) {
             //1일치 이자 계산 시스템
             double interest = savingBalance * monthlyInterestRate;
             //계좌에 쌓이는 이자
@@ -31,7 +35,7 @@ class SavingAccountYJ {
         }
 
         //한달주기 자동이체적금
-        if ((dayCount != 0) && (dayCount % 3 == 0)) { //3일 (한달)이 지났는가?, 맨 처음엔 하루가 지나지 않았으므로 실행
+        if ((user.getDayCount() != 0) && (user.getDayCount() % 3 == 0)) { //3일 (한달)이 지났는가?, 맨 처음엔 하루가 지나지 않았으므로 실행
             if (monthlySaveBalance <= transferBalance) {
 
                 // 입출금계좌에서 적금계좌로 일정금액 송금기능
@@ -57,6 +61,9 @@ class SavingAccountYJ {
 
         //내 적금에 추가로 입금하는 코드
         static void addSavingAccountBalance (User user) {
+            //계좌 잔액 업데이트
+            savingBalance = getSavingAccountBalance();
+            transferBalance = getTransferAccountBalance();
 
             Scanner s = new Scanner(System.in);
 

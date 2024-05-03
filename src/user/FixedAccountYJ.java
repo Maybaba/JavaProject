@@ -14,11 +14,13 @@ class FixedAccountYJ {
 
     //fixed Account
     public static void userFixedAccount(User user) {
+        //계좌 잔액 업데이트
+        fixedBalance = getFixedAccountBalance();
 
         Scanner s = new Scanner(System.in);
 
                 //하루 지났을때 원금에 예금 이자 더해주기
-                if (checkNextDay2()) {
+                if (true) {
 
                     double interest = fixedBalance * fixedInterestRate;
                     fixedBalance += (long) interest;
