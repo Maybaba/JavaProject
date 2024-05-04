@@ -5,6 +5,7 @@ import util.SimpleInput;
 
 import java.util.Scanner;
 
+import static user.AccountBalanceAccessorYJ.getBalances;
 import static user.DepositCtrlYJ.depositMenu;
 
 public class BankController {
@@ -85,6 +86,7 @@ public class BankController {
                     CreateAccountConLJH.createAccount(user);
                     break;
                 case "4":
+                    getBalances(user);
                     depositMenu(user);
                     break;
                 case "0":

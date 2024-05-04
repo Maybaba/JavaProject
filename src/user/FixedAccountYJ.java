@@ -2,6 +2,7 @@ package user;
 
 import java.util.Scanner;
 import static user.AccountBalanceAccessorYJ.*;
+import static user.SimpleInput.input;
 
 class FixedAccountYJ {
 
@@ -19,7 +20,7 @@ class FixedAccountYJ {
             Scanner s = new Scanner(System.in);
 
             //하루 지났을때 원금에 예금 이자 더해주기
-            if (NextdayCountYJ.getInstance().checkNextDay()) {
+            if (NextdayCountYJ.getInstance().checkNextDay2()) {
 
                 double interest = fixedBalance * fixedInterestRate;
                 fixedBalance += (long) interest;
@@ -27,11 +28,11 @@ class FixedAccountYJ {
 
                 System.out.printf(" ◇ 하루가 지남에 따라 예금계좌에 [ %.2f 원 ]의 이자가 쌓였습니다. \n", interest);
                 System.out.printf(" ♦︎ 하루가 지남에 따라 예금계좌 잔고는 [ %d 원 ] 입니다 \n\n", fixedBalance);
-                System.out.println("\n \npress any key ...\n");
-                s.nextLine();
+                input("press any key . . . ");
                 }
             } else {
             System.out.println("⁉️ 예금 통장을 아직 만들지 않았습니다. ");
+            input("press any key . . . ");
         }
     }
 }

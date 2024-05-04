@@ -8,7 +8,7 @@ class NextdayCountYJ {
 
     // 현재 날짜를 이전 날짜로 업데이트하고 현재 날짜를 새로운 날짜로 설정
     //다음날로 지나갔을때 이전날 = 오늘의 날 대입
-    public void moveToNextDay() {
+    public void nextDay() {
 //        addDayAccount();
         nextDay++;
         nextDaya++;

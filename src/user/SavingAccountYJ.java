@@ -47,14 +47,15 @@ class SavingAccountYJ {
                 updateTransferBalances(user, transferBalance);
 
                 System.out.print("\n              ∙▫︎ ☐ □ ・                \n");
-                System.out.printf(" \n ◇ 매달 적금 자동이체 시스템으로 \n입출금계좌에서 적금계좌로 %d 원이 이체되었습니다. \n ", DepositViewYJ.monthlySavingBalance);
+                System.out.printf(" \n ◇ 매달 적금 자동이체 시스템으로 \n입출금계좌에서 적금계좌로 %d 원이 이체되었습니다. \n ", DepositViewYJ.get);
                 System.out.printf(" ◆ 현재 적금계좌 잔액 [%d 원] \n", savingBalance);
                 System.out.printf(" ◆ 현재 입출금계좌 잔액 [%d 원] \n", transferBalance);
                 System.out.print("\n              ∙▫︎ ☐ □ ・                \n");
 
-            } else System.out.println(" ⁉️입출금계좌에 잔액이 부족하여 자동이체 적금을 실패하였습니다. \n");
-            System.out.println("\n \npress any key ...\n");
-            s.nextLine();
+            } else {
+                System.out.println(" ⁉️입출금계좌에 잔액이 부족하여 자동이체 적금을 실패하였습니다. \n");
+                input("press any key . . . ");
+            }
         }
     }
 
@@ -80,8 +81,7 @@ class SavingAccountYJ {
 
                         System.out.printf("\n ◇ [ %s 원 ]이 정상적으로 추가납입 되었습니다. \n", addSaving);
                         System.out.printf("\n ◆ 현재 입출금계좌 잔액 [ %d 원 ] \n", transferBalance);
-                        System.out.println("\n \npress any key ...\n");
-                        s.nextLine();
+                        input("press any key . . . ");
 
                         // addSaving 을 적금계좌에 누적
                         savingBalance += addSaving;
@@ -91,14 +91,12 @@ class SavingAccountYJ {
                         System.out.printf(" \n 추가납입 성공 💨 적금계좌 잔액 [ %d 원 ] \n", savingBalance);
 
                     } else System.out.printf(" ⁉️ 입출금계좌 잔액이 부족합니다. \n      현재 입출금계좌 잔액 [ %d 원] ",transferBalance);
-                    System.out.println("\n \npress any key ...\n");
-                    s.nextLine();
+                    input("press any key . . . ");
                     break;
 
                 } catch (NumberFormatException e) {
-                    System.out.println("\n 🪬 입금 금액은 정수로 입력해 주세요 🪬 \n" +
-                            "press any key ...");
-                    s.nextLine();
+                    System.out.println("\n 🪬 입금 금액은 정수로 입력해 주세요 🪬");
+                    input("press any key . . . ");
                 }
             }
         }
