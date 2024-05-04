@@ -1,8 +1,8 @@
 package user;
-class DayAccountsYJ {
-    /*
+class NextdayCountYJ {
+    
     //field
-    int dayCount = User.getDayCount(); //실제 지난 날 카운트
+    private static final NextdayCountYJ instance = new NextdayCountYJ();
     int nextDay; // CHECKNEXTDAY가 계속 0으로 초기화 되어야 함
     int nextDaya; // CHECKNEXTDAY가 계속 0으로 초기화 되어야 함
 
@@ -14,17 +14,10 @@ class DayAccountsYJ {
         nextDaya++;
     }
 
-    //하루 지날때마다 dayAccuont에 +1 추가
-   public void addDayAccount() {
-       dayCount ++;
-    }
-
     // 다음날로 넘어갔는지 확인하는 메서드
     boolean checkNextDay() {
         if (nextDay == 0) {
-            if(dayCount > 0) {
-
-            } return false; // 첫 호출일 때는 다음날로 넘어가지 않은 것으로 간주
+             return false; // 첫 호출일 때는 다음날로 넘어가지 않은 것으로 간주
         } else {
             nextDay = 0; //이미 1인 값을 0으로 초기화
             // System.out.println("실험 로그 : 하루 재 초기화 됨.");
@@ -33,31 +26,18 @@ class DayAccountsYJ {
     }
     boolean checkNextDay2() {
         if (nextDaya == 0) {
-            if(dayCount > 0) {
-            } return false; // 첫 호출일 때는 다음날로 넘어가지 않은 것으로 간주
+            return false; // 첫 호출일 때는 다음날로 넘어가지 않은 것으로 간주
         } else {
             nextDaya = 0; //이미 1인 값을 0으로 초기화
             //System.out.println("실험 로그 : 하루가 초기화되었습니다.");
             return true; // 이미 다음날로 넘어간 상태
         }
     }
-
     // 하루를 초기화하는 메서드
     void resetDay() {
         nextDay = 0;
-        dayCount = 0;
+    }  static NextdayCountYJ getInstance() {
+        return instance;
     }
 
-    public int getDayAccount() {
-        return dayCount;
-    }
-
-    @Override
-    public String toString() {
-        return "DayAccountsYJ{" +
-                "dayAccount=" + dayCount +
-                '}';
-    }
-
-     */
 }

@@ -23,7 +23,7 @@ public class AccountBalanceAccessorYJ {
     private static long fixedAccountBalance;
 
     // 바뀐 금액 업데이트
-    public static void updateSavingBalances(User user,long balance) {
+    public static void updateSavingBalances(User user, long balance) {
         List<Account> accounts = user.getMyAccount();
         for (Account account : accounts) {
             if (account.getAccountType().equals(AccountType.SAVING)) {
@@ -39,7 +39,7 @@ public class AccountBalanceAccessorYJ {
             }
         }
     }
-    public static void updateTransferBalances(User user,long balance) {
+    public static void updateTransferBalances(User user, long balance) {
         List<Account> accounts = user.getMyAccount();
         for (Account account : accounts) {
             if (account.getAccountType().equals(AccountType.TRANSFER)) {

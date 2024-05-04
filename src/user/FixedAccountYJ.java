@@ -1,8 +1,6 @@
 package user;
 
 import java.util.Scanner;
-
-import static user.DayAccountsYJ.*;
 import static user.AccountBalanceAccessorYJ.*;
 
 class FixedAccountYJ {
@@ -14,24 +12,29 @@ class FixedAccountYJ {
 
     //fixed Account
     public static void userFixedAccount(User user) {
-        //계좌 잔액 업데이트
-        fixedBalance = getFixedAccountBalance();
+        if (getFixedAccountBalance() != 0) {
+            //계좌 잔액 업데이트
+            fixedBalance = getFixedAccountBalance();
 
-        Scanner s = new Scanner(System.in);
+            Scanner s = new Scanner(System.in);
 
-                //하루 지났을때 원금에 예금 이자 더해주기
-                if (true) {
+            //하루 지났을때 원금에 예금 이자 더해주기
+            if (NextdayCountYJ.getInstance().checkNextDay()) {
 
-                    double interest = fixedBalance * fixedInterestRate;
-                    fixedBalance += (long) interest;
-                    updateFixedBalances(user,fixedBalance);
+                double interest = fixedBalance * fixedInterestRate;
+                fixedBalance += (long) interest;
+                updateFixedBalances(user, fixedBalance);
 
-                    System.out.printf(" ◇ 하루가 지남에 따라 예금계좌에 [ %.2f 원 ]의 이자가 쌓였습니다. \n",interest);
-                    System.out.printf(" ♦︎ 하루가 지남에 따라 예금계좌 잔고는 [ %d 원 ] 입니다 \n\n",fixedBalance);
-                    System.out.println("\n \npress any key ...\n");
-                    s.nextLine();
+                System.out.printf(" ◇ 하루가 지남에 따라 예금계좌에 [ %.2f 원 ]의 이자가 쌓였습니다. \n", interest);
+                System.out.printf(" ♦︎ 하루가 지남에 따라 예금계좌 잔고는 [ %d 원 ] 입니다 \n\n", fixedBalance);
+                System.out.println("\n \npress any key ...\n");
+                s.nextLine();
                 }
-            }
+            } else {
+            System.out.println("⁉️ 예금 통장을 아직 만들지 않았습니다. ");
+        }
+    }
 }
+
 
 
