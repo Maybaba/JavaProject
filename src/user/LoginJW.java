@@ -1,8 +1,7 @@
 package user;
 
 import java.util.Scanner;
-
-import static user.RegisterUserJW.getUsers;
+import static util.Colors.*;
 import static util.SimpleInput.input;
 
 public class LoginJW {
@@ -40,7 +39,7 @@ public class LoginJW {
                         System.out.println(" ⁉️ 비밀번호가 일치하지 않습니다.");
                     } else {
                         String userName = RegisterUserJW.getUsers().get(inputId).getName();
-                        System.out.printf(" □ ▫ %s님 SeSeSeBank에 오신것을 환영합니다. ▫ ∙︎\n", userName);
+                        System.out.printf(cyan+" □ ▫ %s님 SeSeSeBank에 오신것을 환영합니다. ▫ ∙︎\n"+exit, userName);
                         isLogin = true;
                         input("\n           press any key . . .");
                         break;

@@ -1,9 +1,7 @@
 package user;
 
-import util.SimpleInput;
-
 import java.util.Map;
-
+import static util.Colors.*;
 import static util.SimpleInput.input;
 
 public class FindUserInfo {
@@ -94,7 +92,7 @@ public class FindUserInfo {
 
                         if (inputPassword.equals(inputPassword2)) {
                             users.get(inputId).setBankPassword(inputPassword);
-                            System.out.println(" ☐ □ 비밀번호 변경이 완료되었습니다 □ ∙ ");
+                            System.out.println(blue + " ☐ □ 비밀번호 변경이 완료되었습니다 □ ∙ " + exit);
                             break;
                         } else {
                             System.out.println("⁉️ 비밀번호가 일치하지 않습니다");

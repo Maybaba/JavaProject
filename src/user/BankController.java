@@ -6,6 +6,8 @@ import util.SimpleInput;
 import java.util.Scanner;
 
 import static user.DepositCtrlYJ.depositMenu;
+import static util.Colors.exit;
+import static util.Colors.red;
 import static util.SimpleInput.input;
 
 public class BankController {
@@ -28,12 +30,12 @@ public class BankController {
 
             while (true) {
 
-            System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ SeSeSe Bank ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+                System.out.println(red+"\n 🧼 ------------ SeSeSe Bank ---------- 🧼 "+exit);
             System.out.println(" 1. 회원가입");
             System.out.println(" 2. 로그인");
             System.out.println(" 3. 아이디 & 비밀번호 찾기");
             System.out.println(" 0. 프로그램 종료");
-            System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎ 원하시는 메뉴를 선택해주세요 ▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+                System.out.println("\n 🧼 ------- 원하는 메뉴를 선택해 주세요 ------- 🧼 ");
             String menuNum = input(" □▫∙︎ ︎");
 
             switch (menuNum) {
@@ -63,13 +65,13 @@ public class BankController {
 
     private void mainMenu(User user) throws InterruptedException {
         while (true) {
-            System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ SeSeSe Bank ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+            System.out.println(red+"\n 🧼 ------------ SeSeSe Bank ---------- 🧼 "+exit);
             System.out.println(" 1. 마이페이지");
             System.out.println(" 2. 입금 ∙ 출금");
             System.out.println(" 3. 계좌 개설");
             System.out.println(" 4. 예금 ∙ 적금");
             System.out.println(" 0. 로그아웃");
-            System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎ 원하시는 메뉴를 선택해주세요 ▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+            System.out.println("\n 🧼 ------- 원하는 메뉴를 선택해 주세요 ------- 🧼 ");
             String mainMenuNum = input(" □▫∙︎ ︎");
             switch (mainMenuNum) {
                 case "1":

@@ -26,7 +26,7 @@ public class CreateAccountLJH extends Account  {
     // 메뉴 창 함수
     public static void createView() {
         System.out.println("\n 🧼 ------------ 계좌 개설 ------------ 🧼 \n");
-        System.out.println(" □ ▫ 계좌를 개설합니다 ▫ ∙ \n   사용하실 계좌의 종류를 선택해주세요.\n    1. 예금\n 2. 적금\n 3. 입출금\n 4. 뒤로가기\n");
+        System.out.println(" □ ▫ 계좌를 개설합니다 ▫ ∙ \n   사용하실 계좌의 종류를 선택해주세요.\n 1. 예금\n 2. 적금\n 3. 입출금\n 4. 뒤로가기\n");
         System.out.println("\n 🧼 --------------------------------- 🧼 ");
     }
 
@@ -103,7 +103,7 @@ public class CreateAccountLJH extends Account  {
                                     Thread.sleep(700);
                                     System.out.println("...");
                                     Thread.sleep(1200);
-                                    System.out.println("∙ ☐ 요청하신 입출금 계좌가 생성되었습니다 □ ▫︎\n        ♦︎  ✡︎ Thank you ✦ ・\n");
+                                    System.out.println("∙ ☐ 요청하신 입출금 계좌가 생성되었습니다 □ ▫︎\n      ♦︎  ✡︎ Thank you ✦ ・\n");
                                     Thread.sleep(1800);
                                     System.out.println(" 🧼 ------------------------------- 🧼 ");
                                 } catch (InterruptedException e) {
@@ -191,7 +191,7 @@ public class CreateAccountLJH extends Account  {
                         Thread.sleep(700);
                         System.out.println("...");
                         Thread.sleep(1200);
-                        System.out.println(" ☐ □ 요청하신 적금 계좌가 생성되었습니다 ▫︎ ☐ \n           ♦︎  ✡︎ Thank you ✦ ・\n");
+                        System.out.println(" ☐ □ 요청하신 적금 계좌가 생성되었습니다 ▫︎ ☐ \n        ♦︎  ✡︎ Thank you ✦ ・\n");
                         Thread.sleep(1300);
                         System.out.println(" 🧼 ------------------------------- 🧼 ");
                     } catch (InterruptedException e) {
@@ -276,7 +276,7 @@ public class CreateAccountLJH extends Account  {
                         Thread.sleep(700);
                         System.out.println("...");
                         Thread.sleep(1200);
-                        System.out.println(" □ ∙ 요청하신 예금 계좌가 생성되었습니다. ☐ ◻︎\n               ♦︎  ✡︎ Thank you ✦ ・\n");
+                        System.out.println(" □ ∙ 요청하신 예금 계좌가 생성되었습니다. ☐ ◻︎\n        ♦︎  ✡︎ Thank you ✦ ・\n");
                         Thread.sleep(1300);
                         System.out.println(" 🧼 ------------------------------- 🧼 ");
                     } catch (InterruptedException e) {
