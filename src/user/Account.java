@@ -18,7 +18,8 @@ public class Account  {
     private long singleTransferLimit;// 일회 이체 한도
     private int accountPassword; // 계좌 비번
 
-    public Account(){};
+    public Account(){
+    };
 
     public Account( long balance, User user, int accountPassword, AccountType type, String accountNum) {
         this.accountNum = generateAccountNumber(); //나중에 랜덤값

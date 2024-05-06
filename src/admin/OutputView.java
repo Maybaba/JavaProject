@@ -14,7 +14,6 @@ public class OutputView {
         System.out.println("===== 관리자 페이지 입니다 =====");
         System.out.println("# 1. 총 잔고 확인");
         System.out.println("# 2. 전체 회원 정보 조회");
-//        System.out.println("# 0. 이전으로 돌아가기");
     }
 
     // 은행 전체 고객들의 계좌 잔액 조회
@@ -35,11 +34,9 @@ public class OutputView {
         for (String key : users.keySet()) {
             User user = users.get(key);
             System.out.println("이름 : " + user.getName() + ", 아이디: " + user.getBankId() + ", 가입일자: " + user.getNowDate());
-
         }
     }
 }
-
 
 // 개설 된 계좌 수
 // 총 예금액

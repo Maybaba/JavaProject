@@ -29,5 +29,8 @@ public class RunAdmin {
             OutputView getInfo = new OutputView();
             getInfo.getCustomerInfo(RegisterUserJW.getUsers());
         }
+
+
+
     }
 }
