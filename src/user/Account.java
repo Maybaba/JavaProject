@@ -17,10 +17,11 @@ public class Account  {
 //    accountStatus;// 계좌 상태
     private long singleTransferLimit;// 일회 이체 한도
     private int accountPassword; // 계좌 비번
+    private long initialDepositBalance; //초기납입금액
 
     public Account(){};
 
-    public Account( long balance, User user, int accountPassword, AccountType type, String accountNum) {
+    public Account( long balance, User user, int accountPassword, AccountType type, String accountNum, long initialDepositBalance) {
         this.accountNum = generateAccountNumber(); //나중에 랜덤값
         this.balance = balance;
 //        this.user = user;
@@ -28,6 +29,7 @@ public class Account  {
         this.singleTransferLimit = 1000000;
         this.accountPassword = accountPassword;
         this.accountType = type;
+        this.initialDepositBalance = initialDepositBalance; //납입금액 설정하기 전엔 기본값 0으로 설정
     }
 
     public String getAccountNum() {
@@ -76,6 +78,14 @@ public class Account  {
 
     public void setAccountPassword(int accountPassword) {
         this.accountPassword = accountPassword;
+    }
+
+    public long getInitialDepositBalance() {
+        return initialDepositBalance;
+    }
+
+    public void setInitialDepositBalance(long initialDepositBalance) {
+        this.initialDepositBalance = initialDepositBalance;
     }
 
     @Override

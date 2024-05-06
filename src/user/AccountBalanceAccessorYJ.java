@@ -11,6 +11,16 @@ public class AccountBalanceAccessorYJ {
         }
         return instance;
     }
+    //계좌 타입 별 initialdepositbalance 구하기
+    public long getInitialSavingBalance(User user) {
+        for (Account account : user.getMyAccount()) {
+            if (account.getAccountType() == AccountType.SAVING) {
+                return account.getInitialDepositBalance();
+            }
+        }
+        return 0L;
+    }
+
 
     public long getSavingAccountBalance(User user) {
         for (Account account : user.getMyAccount()) {

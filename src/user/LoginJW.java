@@ -3,6 +3,7 @@ package user;
 import java.util.Scanner;
 
 import static user.RegisterUserJW.getUsers;
+import static util.SimpleInput.input;
 
 public class LoginJW {
 
@@ -16,7 +17,7 @@ public class LoginJW {
         // 아이디, 비밀번호 검증 반복문
         login : while(true) {
 
-            System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 로그인 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+            System.out.println("\n 🧼 ------------ 로그인 ----------- 🧼 ");
             System.out.println(" 로그인을 시작합니다.");
             System.out.println(" 로그인을 중단하려면 'x'를 입력해 주세요.");
             System.out.print(" 🧼 아이디 : ");
@@ -41,8 +42,7 @@ public class LoginJW {
                         String userName = RegisterUserJW.getUsers().get(inputId).getName();
                         System.out.printf(" □ ▫ %s님 SeSeSeBank에 오신것을 환영합니다. ▫ ∙︎\n", userName);
                         isLogin = true;
-                        Scanner s = new Scanner(System.in);
-                        s.nextLine();
+                        input("\n           press any key . . .");
                         break;
                     }
                 }

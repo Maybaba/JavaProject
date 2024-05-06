@@ -1,7 +1,7 @@
 package user;
 import java.util.Random;
 import java.util.Scanner;
-import static user.SimpleInput.*;
+import static util.SimpleInput.*;
 
 public class CreateAccountLJH extends Account  {
 
@@ -9,8 +9,8 @@ public class CreateAccountLJH extends Account  {
     private AccountType accountType;
     private static Account accountNum;
 
-    public CreateAccountLJH(long balance, User user, int accountPassword, AccountType type, String accountNum) {
-        super(balance, user, accountPassword, type, String.valueOf(accountNum));
+    public CreateAccountLJH(long balance, User user, int accountPassword, AccountType type, String accountNum, long initialDepositBalance) {
+        super(balance, user, accountPassword, type, String.valueOf(accountNum),initialDepositBalance);
         Scanner sc;
     }
 
@@ -25,9 +25,9 @@ public class CreateAccountLJH extends Account  {
 
     // 메뉴 창 함수
     public static void createView() {
-        System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 계좌 개설 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 \n");
-        System.out.println(" □ ▫ 계좌를 개설합니다 ▫ ∙ \n사용하실 계좌의 종류를 선택해주세요.\n1. 예금 2. 적금 3. 입출금 4. 뒤로가기");
-        System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+        System.out.println("\n 🧼 ------------ 계좌 개설 ------------ 🧼 \n");
+        System.out.println(" □ ▫ 계좌를 개설합니다 ▫ ∙ \n   사용하실 계좌의 종류를 선택해주세요.\n    1. 예금\n 2. 적금\n 3. 입출금\n 4. 뒤로가기\n");
+        System.out.println("\n 🧼 --------------------------------- 🧼 ");
     }
 
 
@@ -40,7 +40,7 @@ public class CreateAccountLJH extends Account  {
 
                 // 입출금 계좌가 있는지 확인
                 if (userHasAccountOfType(user, AccountType.TRANSFER)) {
-                    System.out.println("\n⁉️ 이미 생성된 입출금 계좌가 있습니다.");
+                    System.out.println("\n⁉️ 이미 생성된 입출금 계좌가 있습니다");
                     Thread.sleep(1000);
                     createView();
                     break;
@@ -70,7 +70,7 @@ public class CreateAccountLJH extends Account  {
 
                 // 비밀번호가 올바른 경우 계좌 생성
                 String accountNum = generateAccountNumber();
-                Account transferAccount = new Account(balance, user, transferPassword, AccountType.TRANSFER, accountNum);
+                Account transferAccount = new Account(balance, user, transferPassword, AccountType.TRANSFER, accountNum, 0);
 
                 // 초기 입금 설정
 
@@ -103,9 +103,9 @@ public class CreateAccountLJH extends Account  {
                                     Thread.sleep(700);
                                     System.out.println("...");
                                     Thread.sleep(1200);
-                                    System.out.println("∙ ☐ 요청하신 입출금 계좌가 생성되었습니다 □ ▫︎\n감사합니다.\n");
+                                    System.out.println("∙ ☐ 요청하신 입출금 계좌가 생성되었습니다 □ ▫︎\n        ♦︎  ✡︎ Thank you ✦ ・\n");
                                     Thread.sleep(1800);
-                                    System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+                                    System.out.println(" 🧼 ------------------------------- 🧼 ");
                                 } catch (InterruptedException e) {
                                     System.out.println("처리중 입니다 . . . ");
                                 }
@@ -116,7 +116,7 @@ public class CreateAccountLJH extends Account  {
                                     user.getMyAccount().add(transferAccount);
                                     System.out.println("     계좌번호 : " + transferAccount.getAccountNum());
                                     System.out.println("     현재잔액 : " + transferAccount.getBalance() + "원");
-                                    System.out.println(" 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+                                    System.out.println(" 🧼 ---------------------------------- 🧼 ");
                                     Thread.sleep(1000);
                                     createView();
                                     break;
@@ -126,7 +126,7 @@ public class CreateAccountLJH extends Account  {
 
                             } else if (doubleCheck.equals("n") ) {
                             } else {
-                                System.out.println("⁉️ 잘 못 입력하셨습니다.");
+                                System.out.println("⁉️ 잘못 입력하셨습니다.");
 
                             }
                         } break;
@@ -139,7 +139,6 @@ public class CreateAccountLJH extends Account  {
     }
 
     public static void createSaving(User user) throws InterruptedException {
-        long initialSavingBalance = 0;
         try {
             if (userHasAccountOfType(user, AccountType.SAVING)) {
                 System.out.println("\n⁉️ 이미 생성된 적금 계좌가 있습니다.");
@@ -178,13 +177,12 @@ public class CreateAccountLJH extends Account  {
 
                     int savingPassword = askForPassword();
                     String accountNum = generateAccountNumber();
-                    Account savingAccount = new Account(0, user, savingPassword, AccountType.SAVING, accountNum);
+                    Account savingAccount = new Account(0, user, savingPassword, AccountType.SAVING, accountNum, firstDepositSav);
 
                     withdrawFromTransfer(user, firstDepositSav);
                     savingAccount.setBalance(firstDepositSav);
-                    // 적금 계좌 생성 후 잔액 설정
-                    initialSavingBalance = savingAccount.getBalance();
-                    return initialSavingBalance;
+                    // 초기납입금액 설정
+                    savingAccount.setInitialDepositBalance(firstDepositSav);
 
                     try {
                         System.out.println(".");
@@ -193,9 +191,9 @@ public class CreateAccountLJH extends Account  {
                         Thread.sleep(700);
                         System.out.println("...");
                         Thread.sleep(1200);
-                        System.out.println(" ☐ □ 요청하신 적금 계좌가 생성되었습니다 ▫︎ ☐ \n감사합니다.\n");
+                        System.out.println(" ☐ □ 요청하신 적금 계좌가 생성되었습니다 ▫︎ ☐ \n           ♦︎  ✡︎ Thank you ✦ ・\n");
                         Thread.sleep(1300);
-                        System.out.println(" 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+                        System.out.println(" 🧼 ------------------------------- 🧼 ");
                     } catch (InterruptedException e) {
                         System.out.println("처리중 입니다 . . . . .");
                     }
@@ -203,7 +201,7 @@ public class CreateAccountLJH extends Account  {
                     user.getMyAccount().add(savingAccount);
                     System.out.println("     계좌번호 : " + savingAccount.getAccountNum());
                     System.out.println("     현재잔액 : " + savingAccount.getBalance() + "원");
-                    System.out.println(" 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+                    System.out.println(" 🧼 ------------------------------- 🧼 ");
 
                     Thread.sleep(1000);
                     createView();
@@ -211,7 +209,7 @@ public class CreateAccountLJH extends Account  {
                 } else if (doubleCheck.equals("n")) {
                     System.out.println("입력을 취소합니다. 초기 납입 금액을 다시 입력해주세요.");
                 } else {
-                    System.out.println("⁉️ 잘 못 입력하셨습니다.");
+                    System.out.println("⁉️ 잘못 입력하셨습니다.");
                 }
             }
         } catch (NumberFormatException e) {
@@ -263,10 +261,13 @@ public class CreateAccountLJH extends Account  {
 
                     int fixedPassword = askForPassword();
                     String accountNum = generateAccountNumber();
-                    Account fixedAccount = new Account(0, user, fixedPassword, AccountType.FIXED, accountNum);
+                    Account fixedAccount = new Account(0, user, fixedPassword, AccountType.FIXED, accountNum, firstDepositSav);
 
                     withdrawFromTransfer(user, firstDepositSav);
                     fixedAccount.setBalance(firstDepositSav);
+
+                    //예금 초기납입금액 설정
+                    fixedAccount.setInitialDepositBalance(firstDepositSav);
 
                     try {
                         System.out.println(".");
@@ -275,9 +276,9 @@ public class CreateAccountLJH extends Account  {
                         Thread.sleep(700);
                         System.out.println("...");
                         Thread.sleep(1200);
-                        System.out.println(" □ ∙ 요청하신 예금 계좌가 생성되었습니다. ☐ ◻︎\n감사합니다.\n");
+                        System.out.println(" □ ∙ 요청하신 예금 계좌가 생성되었습니다. ☐ ◻︎\n               ♦︎  ✡︎ Thank you ✦ ・\n");
                         Thread.sleep(1300);
-                        System.out.println(" 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+                        System.out.println(" 🧼 ------------------------------- 🧼 ");
                     } catch (InterruptedException e) {
                         System.out.println("처리중 입니다 . . . . .");
                     }
@@ -285,7 +286,7 @@ public class CreateAccountLJH extends Account  {
                     user.getMyAccount().add(fixedAccount);
                     System.out.println("     계좌번호 : " + fixedAccount.getAccountNum());
                     System.out.println("     현재잔액 : " + fixedAccount.getBalance() + "원");
-                    System.out.println(" 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+                    System.out.println(" 🧼 ------------------------------- 🧼 ");
 
                     Thread.sleep(1000);
                     createView();
@@ -293,7 +294,7 @@ public class CreateAccountLJH extends Account  {
                 } else if (doubleCheck.equals("n")) {
                     System.out.println("입력을 취소합니다. 초기 납입 금액을 다시 입력해주세요.");
                 } else {
-                    System.out.println("⁉️ 잘 못 입력하셨습니다.");
+                    System.out.println("⁉️ 잘못 입력하셨습니다.");
                 }
             }
         } catch (NumberFormatException e) {

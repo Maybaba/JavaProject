@@ -47,7 +47,7 @@ public class DepositWithdrawalHS {
 
 	// 입출금 메뉴 출력 메서드
 	public String showMenu () {
-		System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎ 원하시는 메뉴를 선택해주세요 ▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+		System.out.println("\n 🧼------- 원하는 메뉴를 선택해주세요 -------- 🧼 ");
 		System.out.println(" 1. 입금하기");
 		System.out.println(" 2. 출금하기");
 		System.out.println(" 0. 돌아가기");
