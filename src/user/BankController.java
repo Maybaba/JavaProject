@@ -5,7 +5,6 @@ import util.SimpleInput;
 
 import java.util.Scanner;
 
-import static user.AccountBalanceAccessorYJ.getInstance;
 import static user.DepositCtrlYJ.depositMenu;
 
 public class BankController {
