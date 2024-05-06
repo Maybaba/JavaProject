@@ -105,6 +105,26 @@ public class User {
         this.myMoney = myMoney;
     }
 
+    // 특정 유형의 계좌 잔액 조회
+    public long getAccountBalance(AccountType accountType) {
+        for (Account account : myAccount) {
+            if (account.getAccountType() == accountType) {
+                return account.getBalance();
+            }
+        }
+        return 0; // 해당 유형의 계좌가 없는 경우
+    }
+
+    // 특정 유형의 계좌가 있는지 확인
+    public boolean hasAccount(AccountType accountType) {
+        for (Account account : myAccount) {
+            if (account.getAccountType() == accountType) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

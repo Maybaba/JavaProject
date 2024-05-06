@@ -10,6 +10,8 @@ import static user.AccountBalanceAccessorYJ.*;
 public class DepositCtrlYJ {
 
     public static void depositMenu(User user) {
+        //계좌 잔액 조회해서 업데이트 , 메뉴 누를 대마다 함수 실행
+        getInstance().getUserAccountBalance(user);
 
         System.out.printf("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 마이 예금 ∙ 적금 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 \n",  user.getDayCount());
         System.out.printf("               sesese-bank 와 [ %s일 째 ]🫧\n",  user.getDayCount());
@@ -25,7 +27,6 @@ public class DepositCtrlYJ {
             case "1": //나의 적금 현황
                 System.out.println("적금 현황으로 접속합니다 ...");
                 DepositViewYJ.viewSavingAccountStatus(user);
-                break;
 
             case "2": //나의 예금 현황
                 System.out.println("예금 현황으로 접속합니다 ...");
@@ -34,11 +35,10 @@ public class DepositCtrlYJ {
 
             case "0": // 뒤로 가기
                 System.out.println("이전 메뉴로 돌아갑니다 ...");
-//                BankController.mainMenu(user);
                 break;//이거 이전의 메뉴로 돌아가기
 
             case "*": // 다음날로 넘어감, nextday 분기점 설정
-                if (getFixedAccountBalance() != 0 && getSavingAccountBalance() != 0) {
+                if (getInstance().getFixedAccountBalance(user) != 0 && getInstance().getSavingAccountBalance(user) != 0) {
 
                     user.moveToNextDay();
                     NextdayCountYJ.getInstance().nextDay();

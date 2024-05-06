@@ -1,44 +1,39 @@
 package user;
 
-import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
 
 import static user.AccountBalanceAccessorYJ.*;
 import static user.DepositCtrlYJ.depositMenu;
 import static util.SimpleInput.*;
 
 public class DepositViewYJ {
+    // 사용자별 적금 잔액을 저장하는 맵
+    private static Map<User, Long> monthlySavingBalances = new HashMap<>();
 
-    //한달 적금 금액 받아오기
-    private final long monthlySavingBalance;
-
-    //생성자를 통해 적금 값 초기화
+    // 생성자를 통해 적금 값 초기화
     public DepositViewYJ(User user) {
-        // 만약 적금통장을 만들었으면 한달적금금액 초기화
-        if (getSavingAccountBalance() != 0) {
-            this.monthlySavingBalance = getSavingAccountBalance();
-        } else {
-            // 만들지 않았으면 잔액이 0이므로 0으로 초기화
-           this.monthlySavingBalance = 0;
+        long initialMonthlySavingBalance = getInstance().getSavingAccountBalance(user);
+        if (initialMonthlySavingBalance != 0) {
+            monthlySavingBalances.put(user, initialMonthlySavingBalance);
         }
     }
-
     // 적금 잔액 반환 메서드
-    public final long getMonthlySavingBalance() {
-        return monthlySavingBalance;
+    public static final long getMonthlySavingBalance(User user) {
+        Long balance = monthlySavingBalances.get(user);
+        return balance != null ? balance : 0;
     }
-
     //나의 적금계좌 보기
     public static void viewSavingAccountStatus(User user) {
-        if (getSavingAccountBalance() != 0) {
-            //자동넘어감 방지 stop 하기 위한 코드
-            Scanner s = new Scanner(System.in);
+        long savingAccountBalance = getInstance().getSavingAccountBalance(user);
+        if (savingAccountBalance != 0) {
 
             //나의 적금 현황
             System.out.printf("\n  ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ ∙ ・ %s 님의 적금계좌 ◻︎ □ ▫︎▫︎▫︎▫︎▫︎▫︎▫︎  \n", user.getName());
             System.out.printf("\n              sesese-bank 와 [ %s일 째 ]🫧\n", user.getDayCount());
 
-            System.out.printf(" ✦ 나의 적금계좌 잔액 [%d]원 \n\n", getSavingAccountBalance());
-            System.out.printf(" ♦︎ 매달 [%d 원] 적금하고 있어요 \n\n", monthlySavingBalance);
+            System.out.printf(" ✦ 나의 적금계좌 잔액 [%d]원 \n\n", getInstance().getSavingAccountBalance(user));
+            System.out.printf(" ♦︎ 매달 [%d 원] 적금하고 있어요 \n\n", getMonthlySavingBalance(user));
             System.out.println(" ✧ 나의 적금계좌 이율 [ 1 % ] \n");
             System.out.println("(하루, 삼일이 지날때마다 이율은 중복으로 계산됩니다.)\n");
             input("press any key . . . ");
@@ -71,18 +66,15 @@ public class DepositViewYJ {
 
     //나의 예금계좌 보기
     public static void viewFixedAccountStatus(User user) {
-        if (getSavingAccountBalance() != 0) {
-
-            //자동넘어감 방지 코드
-            Scanner s = new Scanner(System.in);
+        if (getInstance().getSavingAccountBalance(user) != 0) {
 
             System.out.printf("\n  ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ ∙ ・ %s 님의 예금계좌 ◻︎ □ ▫︎▫︎▫︎▫︎▫︎▫︎▫︎  \n", user.getName());
 
-            System.out.printf(" ♦︎ 나의 예금계좌 잔액 [%d 원] \n", getFixedAccountBalance());
+            System.out.printf(" ♦︎ 나의 예금계좌 잔액 [%d 원] \n", getInstance().getFixedAccountBalance(user));
             System.out.println(" ✧ 나의 예금계좌 이율 [ 5 % ] \n");
             System.out.println("(이율은 하루가 지날때마다 계산됩니다.)\n");
-            System.out.println("press any key . . .");
-            s.nextLine();
+            input("press any key . . . ");
+
 
             d:
             while (true) {
@@ -100,18 +92,16 @@ public class DepositViewYJ {
                             break d;
 
                         default: //이외의 값을 선택했을 때
-                            System.out.println("⁉️ 1, 0 번중 하나를 선택해주세요 \n press any key ...");
-                            s.nextLine();
+                            System.out.println("⁉️ 1, 0 번중 하나를 선택해주세요 ");
+                            input("press any key . . . ");
                     }
                 } catch (Exception e) {
-                    System.out.println(" .... 🪬 \n press any key ...");
-                    s.nextLine();
+                    input("press any key . . . ");
                 }
             }
         } else {
             System.out.println("⁉️ 예금 통장이 아직 존재하지 않습니다. ");
             input(" press any key . . .");
-            depositMenu(user);
         }
     }
 }

@@ -7,27 +7,25 @@ import static user.NextdayCountYJ.*;
 import static util.SimpleInput.*;
 
 class SavingAccountYJ {
-    private static long transferBalance = getTransferAccountBalance();
-    private static long savingBalance = getSavingAccountBalance();
+    private static long transferBalance;
+    private static long savingBalance;
     private static double monthlyInterestRate = 0.01; //적금계좌 이자율 : 1% -> 관리자가 바꿀 수 있음
 
     //적금계좌 이율 계산
-    static void userSavingAccount(User user) {
+static void userSavingAccount(User user) {
 
         //계좌 잔액 업데이트
-        savingBalance = getSavingAccountBalance();
-        transferBalance = getTransferAccountBalance();
-
-        Scanner s = new Scanner(System.in);
+        savingBalance = AccountBalanceAccessorYJ.getInstance().getSavingAccountBalance(user);
+        transferBalance = AccountBalanceAccessorYJ.getInstance().getTransferAccountBalance(user);
 
         //하루당 이자율 한번만 계산
         if (NextdayCountYJ.getInstance().checkNextDay()) {
             //1일치 이자 계산 시스템
-            double interest = getSavingAccountBalance() * monthlyInterestRate;
+            double interest = savingBalance * monthlyInterestRate;
             //계좌에 쌓이는 이자
             savingBalance += (long) interest;
             //적금 계좌 업데이트
-            updateSavingBalances(user, savingBalance);
+            AccountBalanceAccessorYJ.getInstance().updateSavingAccountBalance(user, savingBalance);
 
             System.out.printf(" ♦︎ 하루가 지남에 따라 적금계좌에 [ %.2f 원 ]의 이자가 쌓였습니다. \n", interest);
             System.out.printf(" ◇ 하루가 지남에 따라 적금계좌 잔고는 [ %d 원 ] 입니다.\n\n", savingBalance);
@@ -35,19 +33,19 @@ class SavingAccountYJ {
 
         //한달주기 자동이체적금
         if ((user.getDayCount() != 0) && (user.getDayCount() % 3 == 0)) { //3일 (한달)이 지났는가?, 맨 처음엔 하루가 지나지 않았으므로 실행
-            if (getSavingAccountBalance() <= transferBalance) {
+            if (DepositViewYJ.getMonthlySavingBalance(user) <= transferBalance) {
+
+                transferBalance -= DepositViewYJ.getMonthlySavingBalance(user);
+                //입출금계좌 업데이트
+                AccountBalanceAccessorYJ.getInstance().updateTransferAccountBalance(user, transferBalance);
 
                 // 입출금계좌에서 적금계좌로 일정금액 송금기능
-                savingBalance += getSavingAccountBalance();
+                savingBalance += DepositViewYJ.getMonthlySavingBalance(user);
                 // 적금계좌 업데이트
-                updateSavingBalances(user, savingBalance);
-
-                transferBalance -= getSavingAccountBalance();
-                //입출금계좌 업데이트
-                updateTransferBalances(user, transferBalance);
+                AccountBalanceAccessorYJ.getInstance().updateSavingAccountBalance(user, savingBalance);
 
                 System.out.print("\n              ∙▫︎ ☐ □ ・                \n");
-                System.out.printf(" \n ◇ 매달 적금 자동이체 시스템으로 \n입출금계좌에서 적금계좌로 %d 원이 이체되었습니다. \n ", DepositViewYJ.get);
+                System.out.printf(" \n ◇ 매달 적금 자동이체 시스템으로 \n입출금계좌에서 적금계좌로 %d 원이 이체되었습니다. \n ", DepositViewYJ.getMonthlySavingBalance(user));
                 System.out.printf(" ◆ 현재 적금계좌 잔액 [%d 원] \n", savingBalance);
                 System.out.printf(" ◆ 현재 입출금계좌 잔액 [%d 원] \n", transferBalance);
                 System.out.print("\n              ∙▫︎ ☐ □ ・                \n");
@@ -62,12 +60,10 @@ class SavingAccountYJ {
         //내 적금에 추가로 입금하는 코드
         static void  addSavingAccountBalance(User user) {
             //계좌 잔액 업데이트
-            savingBalance = getSavingAccountBalance();
-            transferBalance = getTransferAccountBalance();
+            savingBalance = AccountBalanceAccessorYJ.getInstance().getSavingAccountBalance(user);
+            transferBalance = AccountBalanceAccessorYJ.getInstance().getTransferAccountBalance(user);
 
-            Scanner s = new Scanner(System.in);
-
-            int addSaving = 0;
+            int addSaving;
 
             while (true) {
                 try {
@@ -77,7 +73,7 @@ class SavingAccountYJ {
                     if (transferBalance >= addSaving) {
                         transferBalance -= addSaving;
                         //입출금계좌 업데이트
-                        updateTransferBalances(user,transferBalance);
+                        AccountBalanceAccessorYJ.getInstance().updateTransferAccountBalance(user,transferBalance);
 
                         System.out.printf("\n ◇ [ %s 원 ]이 정상적으로 추가납입 되었습니다. \n", addSaving);
                         System.out.printf("\n ◆ 현재 입출금계좌 잔액 [ %d 원 ] \n", transferBalance);
@@ -86,7 +82,7 @@ class SavingAccountYJ {
                         // addSaving 을 적금계좌에 누적
                         savingBalance += addSaving;
                         //적금계좌 업데이트
-                        updateSavingBalances(user, savingBalance);
+                        AccountBalanceAccessorYJ.getInstance().updateSavingAccountBalance(user, savingBalance);
 
                         System.out.printf(" \n 추가납입 성공 💨 적금계좌 잔액 [ %d 원 ] \n", savingBalance);
 
