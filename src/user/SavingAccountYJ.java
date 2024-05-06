@@ -3,6 +3,7 @@ package user;
 import java.util.Scanner;
 
 import static user.AccountBalanceAccessorYJ.*;
+import static user.CreateAccountLJH.getInitialSavingBalance;
 import static user.NextdayCountYJ.*;
 import static util.SimpleInput.*;
 
@@ -11,12 +12,13 @@ class SavingAccountYJ {
     private static long savingBalance;
     private static double monthlyInterestRate = 0.01; //적금계좌 이자율 : 1% -> 관리자가 바꿀 수 있음
 
+
     //적금계좌 이율 계산
 static void userSavingAccount(User user) {
 
         //계좌 잔액 업데이트
-        savingBalance = AccountBalanceAccessorYJ.getInstance().getSavingAccountBalance(user);
-        transferBalance = AccountBalanceAccessorYJ.getInstance().getTransferAccountBalance(user);
+        savingBalance = AccountBalanceAccessorYJ.getInstance().getUserAccountBalance(user);
+        transferBalance = AccountBalanceAccessorYJ.getInstance().getUserAccountBalance(user);
 
         //하루당 이자율 한번만 계산
         if (NextdayCountYJ.getInstance().checkNextDay()) {
@@ -33,19 +35,19 @@ static void userSavingAccount(User user) {
 
         //한달주기 자동이체적금
         if ((user.getDayCount() != 0) && (user.getDayCount() % 3 == 0)) { //3일 (한달)이 지났는가?, 맨 처음엔 하루가 지나지 않았으므로 실행
-            if (DepositViewYJ.getMonthlySavingBalance(user) <= transferBalance) {
+            if (getInitialSavingBalance() <= transferBalance) {
 
-                transferBalance -= DepositViewYJ.getMonthlySavingBalance(user);
+                transferBalance -= getInitialSavingBalance();
                 //입출금계좌 업데이트
                 AccountBalanceAccessorYJ.getInstance().updateTransferAccountBalance(user, transferBalance);
 
                 // 입출금계좌에서 적금계좌로 일정금액 송금기능
-                savingBalance += DepositViewYJ.getMonthlySavingBalance(user);
+                savingBalance += getInitialSavingBalance();
                 // 적금계좌 업데이트
                 AccountBalanceAccessorYJ.getInstance().updateSavingAccountBalance(user, savingBalance);
 
                 System.out.print("\n              ∙▫︎ ☐ □ ・                \n");
-                System.out.printf(" \n ◇ 매달 적금 자동이체 시스템으로 \n입출금계좌에서 적금계좌로 %d 원이 이체되었습니다. \n ", DepositViewYJ.getMonthlySavingBalance(user));
+                System.out.printf(" \n ◇ 매달 적금 자동이체 시스템으로 \n입출금계좌에서 적금계좌로 %d 원이 이체되었습니다. \n ",getInitialSavingBalance());
                 System.out.printf(" ◆ 현재 적금계좌 잔액 [%d 원] \n", savingBalance);
                 System.out.printf(" ◆ 현재 입출금계좌 잔액 [%d 원] \n", transferBalance);
                 System.out.print("\n              ∙▫︎ ☐ □ ・                \n");

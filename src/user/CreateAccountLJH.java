@@ -8,11 +8,14 @@ public class CreateAccountLJH extends Account  {
     public static Scanner sc;
     private AccountType accountType;
     private static Account accountNum;
+    //적금초기납입액 필드값 추가
+    private static long savingAccountBalance = 0;
 
     public CreateAccountLJH(long balance, User user, int accountPassword, AccountType type, String accountNum ) {
         super(balance, user, accountPassword, type, String.valueOf(accountNum));
         Scanner sc;
     }
+
     public void Account(AccountType accountType) {
         this.accountType = accountType;
     }
@@ -137,7 +140,6 @@ public class CreateAccountLJH extends Account  {
         }
     }
 
-
     public static void createSaving(User user) throws InterruptedException {
         try {
             if (userHasAccountOfType(user, AccountType.SAVING)) {
@@ -181,6 +183,8 @@ public class CreateAccountLJH extends Account  {
 
                     withdrawFromTransfer(user, firstDepositSav);
                     savingAccount.setBalance(firstDepositSav);
+                    // 적금 계좌 생성 후 잔액 설정
+                    savingAccountBalance = firstDepositSav;
 
                     try {
                         System.out.println(".");
@@ -356,5 +360,18 @@ public class CreateAccountLJH extends Account  {
                 System.out.println("⁉️ 숫자로만 입력해주세요.");
             }
         }
+    }
+    // 적금 계좌의 잔액을 반환하는 메서드
+    public static long getSavingAccountBalance() {
+        return savingAccountBalance;
+    }
+
+    // 적금 계좌의 잔액을 설정하는 메서드
+    public static void setSavingAccountBalance(long balance) {
+        savingAccountBalance = balance;
+    }
+    // CreateAccountLJH 클래스의 적금 계좌 잔액에 접근하는 메서드
+    public static final long getInitialSavingBalance() {
+        return CreateAccountLJH.getSavingAccountBalance();
     }
 }
