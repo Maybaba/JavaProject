@@ -2,6 +2,9 @@ package user;
 
 import java.util.*;
 
+import static util.Colors.*;
+import static util.SimpleInput.input;
+
 public class RegisterUserJW {
 
     private String menuNum;
@@ -12,11 +15,12 @@ public class RegisterUserJW {
         users.put("qwe", new User("김철수", "qwe", "1234", "돈"));
     }
     public void test () {
-        System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ SeSeSe Bank ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+        System.out.println("\n 🧼 ------------ SeSeSe Bank ---------- 🧼 ");
+
         System.out.println(" 1. 회원가입");
         System.out.println(" 2. 로그인");
         System.out.println(" 3. 프로그램 종료");
-        System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎ 원하시는 메뉴를 선택해주세요 ▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+        System.out.println("\n 🧼 ------- 원하는 메뉴를 선택해 주세요 ------- 🧼 ");
         System.out.print(" □▫∙︎ ︎");
         menuNum=sc.nextLine();
         System.out.println(menuNum);
@@ -33,7 +37,7 @@ public class RegisterUserJW {
         String bankPassword1;
         String userTreasure;
         String userName;
-        System.out.println("\n 🧼▫︎▫︎▫︎▫︎︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 회원 가입 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎︎▫︎ 🧼 ");
+        System.out.println("\n 🧼 -------------- 회원 가입 -------------- 🧼 ");
         System.out.println(" 회원가입을 시작합니다.");
         System.out.println(" 회원가입을 중지하시려면 'x'를 입력해 주세요.");
         exit: while(true) {
@@ -103,7 +107,8 @@ public class RegisterUserJW {
             // 입력받은 이름, 아이디, 비밀번호를 가지고 새로운 User 객체를 생성 후
             // Map<String, User>에 저장
             users.put(bankId, new User(userName, bankId, bankPassword1, userTreasure));
-            System.out.printf(" ☐ □ %s님의 회원가입이 완료되었습니다. □ ∙ \n", userName);
+            System.out.printf(blue + " ☐ □ %s님의 회원가입이 완료되었습니다. □ ∙ \n" + exit, userName);
+            input("\n       press any key . . . ");
             break;
         }
     }

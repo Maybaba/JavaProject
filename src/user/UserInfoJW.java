@@ -1,18 +1,19 @@
 package user;
 
 
+import static util.Colors.*;
 
 public class UserInfoJW {
 
 
     // 매개변수로 받은 User의 정보를 보여주는 메서드
     public void userInfo(User user) {
-        System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ SeSeSe Bank ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
-        System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 회원 정보 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
-        System.out.println("# 이름 : " + user.getName());
-        System.out.println("# 아이디 : " + user.getBankId());
-        System.out.println("# 가입일 : " + user.getNowDate());
-        System.out.println("\n 🧼 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 보유 계좌 ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎ 🧼 ");
+        System.out.println("\n 🧼 ------------ SeSeSe Bank ---------- 🧼 ");
+        System.out.println("\n 🧼 ------------- 회원 정보 ------------- 🧼 ");
+        System.out.println(red + "# 이름 : " + exit + user.getName());
+        System.out.println( yellow + "# 아이디 : " + exit + user.getBankId());
+        System.out.println(green + "# 가입일 : " +exit + user.getNowDate());
+        System.out.println("\n 🧼 ------------- 보유 계좌 -------------︎ 🧼 ");
 
         // 통장 호출시 번호를 매기기 위한 지역변수
         int accountCount = 1;
@@ -24,15 +25,15 @@ public class UserInfoJW {
             // enum Type에 따른 무슨 통장인지 한글로 나타내기 위한 메서드 호출
             accountType = accountType(account.getAccountType());
             System.out.println("\n" + accountCount + ". " + accountType);
-            System.out.println("# 계좌번호 : " + account.getAccountNum());
-            System.out.println("# 잔액 : " + account.getBalance()+ "원");
+            System.out.println(cyan + "# 계좌번호 : " + exit + account.getAccountNum());
+            System.out.println(blue +  "# 잔액 : " + exit + account.getBalance()+ "원");
             // 통장을 호출할때마다 잔액을 총 잔액에 더해줌
             totalBalance += account.getBalance();
-            System.out.println("# 개설 일자 : " + account.getOpenAccountDate());
-            System.out.println("# 최대 이체 한도 : " + account.getSingleTransferLimit());
+            System.out.println(purple +  "# 개설 일자 : " + exit + account.getOpenAccountDate());
+            System.out.println(green +  "# 최대 이체 한도 : " + exit + account.getSingleTransferLimit());
             accountCount++;
         }
-        System.out.println(" ☐ □ ▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎▫︎");
+        System.out.println(" ☐ □ -----------------------------");
         user.setMyMoney(totalBalance);
         System.out.println("\n 🧼 총 잔액 : " + user.getMyMoney() + "원");
     }

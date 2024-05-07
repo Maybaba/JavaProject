@@ -1,16 +1,15 @@
 package user;
 
 import static user.CreateAccountLJH.*;
-
-import static user.SimpleInput.input;
+import static util.SimpleInput.input;
 
 public class CreateAccountConLJH extends Account {
     private AccountType accountType;
 
     public CreateAccountConLJH() {};
 
-    public CreateAccountConLJH(long balance, User user, int accountPassword, AccountType type, Account accountNum) {
-        super(balance, user, accountPassword, type, String.valueOf(accountNum));
+    public CreateAccountConLJH(long balance, User user, int accountPassword, AccountType type, Account accountNum, long initialDepositBalance) {
+        super(balance, user, accountPassword, type, String.valueOf(accountNum), initialDepositBalance);
         this.accountType = AccountType.SAVING;
         this.accountType = AccountType.FIXED;
         this.accountType = AccountType.TRANSFER;
@@ -26,14 +25,14 @@ public class CreateAccountConLJH extends Account {
 
             switch (menuNum) {
                 case "1":
-                    System.out.println("\n ∙ ◻︎ 저축 예금 계좌를 선택하셨습니다 ◻︎ ▫");
+                    System.out.println("\n            ∙ ◻︎ 저축 예금 계좌를 선택하셨습니다 ◻︎ ▫");
                     Thread.sleep(1000);
                     System.out.println(" ◻︎ ◻︎ 현재 가입하실 수 있는 예금 상품으로는 금리 일 5%의 상품이 있습니다 ▫︎ □ ");
                     Thread.sleep(1500);
                     while (true) {
                         int fixed = 0;
                         try {
-                            fixed = Integer.parseInt(input("가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n>> ").replace(" ",""));
+                            fixed = Integer.parseInt(input("        가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n □▫∙ ").replace(" ",""));
                         } catch (NumberFormatException e) {
                             System.out.println("숫자를 입력해주세요");
                         }
@@ -52,14 +51,14 @@ public class CreateAccountConLJH extends Account {
                     }break;
 
                 case "2":
-                    System.out.println("\n적금 계좌를 선택하셨습니다.");
+                    System.out.println("\n              ◆ ☐ 적금 계좌를 선택하셨습니다. ∙ ▫︎");
                     Thread.sleep(1000);
-                    System.out.println("현재 가입하실 수 있는 적금 상품으로는 금리 일 1%의 상품이 있습니다.");
+                    System.out.println("▫︎ ◻︎ 현재 가입하실 수 있는 적금 상품으로는 금리 일 1%의 상품이 있습니다. ・ ☐");
                     Thread.sleep(1500);
                     while (true) {
                         int saving = 0;
                         try {
-                            saving = Integer.parseInt(input("가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n □▫∙ ").replace(" ",""));
+                            saving = Integer.parseInt(input("        가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n □▫∙ ").replace(" ",""));
                         } catch (NumberFormatException e) {
                             System.out.println("숫자를 입력해주세요");
                         }
@@ -72,17 +71,17 @@ public class CreateAccountConLJH extends Account {
                             createView();
                             break;
                         } else {
-                            System.out.println("올바른 메뉴번호를 입력해주세요.");
+                            System.out.println("⁉️ 올바른 메뉴번호를 입력해주세요.");
                         }
                     } break;
                 case "3":
-                    System.out.println("\n입출금 계좌를 선택하셨습니다.");
+                    System.out.println("\n         ▫︎ 입출금 계좌를 선택하셨습니다. ・");
                     Thread.sleep(1000);
                     while (true) {
 
                         int saving = 0;
                         try {
-                            saving = Integer.parseInt(input("가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n□▫∙ ").replace(" ",""));
+                            saving = Integer.parseInt(input("        가입을 원하신다면 1번을 아니면 2번을 입력해주세요.\n□▫∙ ").replace(" ",""));
                         } catch (NumberFormatException e) {
                             System.out.println("숫자를 입력해주세요");
                         }
