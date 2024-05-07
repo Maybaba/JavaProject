@@ -28,7 +28,7 @@ public class CreateAccountConLJH extends Account {
                     System.out.println("\n            ∙ ◻︎ 저축 예금 계좌를 선택하셨습니다 ◻︎ ▫");
                     Thread.sleep(1000);
                     System.out.println(" ◻︎ ◻︎ 현재 가입하실 수 있는 예금 상품으로는 금리 일 5%의 상품이 있습니다 ▫︎ □ ");
-                    Thread.sleep(1500);
+                    Thread.sleep(1000);
                     while (true) {
                         int fixed = 0;
                         try {
@@ -54,7 +54,7 @@ public class CreateAccountConLJH extends Account {
                     System.out.println("\n              ◆ ☐ 적금 계좌를 선택하셨습니다. ∙ ▫︎");
                     Thread.sleep(1000);
                     System.out.println("▫︎ ◻︎ 현재 가입하실 수 있는 적금 상품으로는 금리 일 1%의 상품이 있습니다. ・ ☐");
-                    Thread.sleep(1500);
+                    Thread.sleep(1000);
                     while (true) {
                         int saving = 0;
                         try {
