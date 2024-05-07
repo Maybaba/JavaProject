@@ -101,11 +101,19 @@ public class DepositWithdrawalHS {
 			return;
 		}
 		exit:  while (true) {
-			System.out.println("\n비밀번호를 입력해 주세요");
-			String inputAccountPassword = input(" □▫∙︎ ︎");
-			if (Integer.parseInt(inputAccountPassword) != accountVerification(user).getAccountPassword()) {
-				System.out.println("⁉️ 비밀번호가 틀렸습니다.");
-				break;
+			while (true) {
+				System.out.println("\n비밀번호를 입력해 주세요\n 취소하려면 [X]를 입력하세요");
+				try {
+					String inputAccountPassword = input(" □▫∙︎ ︎");
+					if (inputAccountPassword.equalsIgnoreCase("X")) break exit;
+					if (Integer.parseInt(inputAccountPassword) != accountVerification(user).getAccountPassword()) {
+						System.out.println("⁉️ 비밀번호가 틀렸습니다.");
+					} else if (Integer.parseInt(inputAccountPassword) != accountVerification(user).getAccountPassword()) {
+						break;
+					}
+				} catch (NumberFormatException e) {
+					System.out.println("⁉️ 비밀번호가 틀렸습니다.");
+				}
 			}
 			while (true) {
 				System.out.printf("\n출금하실 금액을 입력하세요\n현재 잔액: %d\n 취소하려면 [X]를 입력하세요\n", accountVerification(user).getBalance());
