@@ -108,7 +108,7 @@ public class DepositWithdrawalHS {
 					if (inputAccountPassword.equalsIgnoreCase("X")) break exit;
 					if (Integer.parseInt(inputAccountPassword) != accountVerification(user).getAccountPassword()) {
 						System.out.println("⁉️ 비밀번호가 틀렸습니다.");
-					} else if (Integer.parseInt(inputAccountPassword) != accountVerification(user).getAccountPassword()) {
+					} else if (Integer.parseInt(inputAccountPassword) == accountVerification(user).getAccountPassword()) {
 						break;
 					}
 				} catch (NumberFormatException e) {
