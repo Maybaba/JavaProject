@@ -25,9 +25,9 @@ public class CreateAccountLJH extends Account  {
 
     // 메뉴 창 함수
     public static void createView() {
-        System.out.println("\n 🧼 ------------ 계좌 개설 ------------ 🧼 \n");
+        System.out.println("\n 🧼 ---------------- 계좌 개설 ---------------- 🧼 \n");
         System.out.println(" □ ▫ 계좌를 개설합니다 ▫ ∙ \n   사용하실 계좌의 종류를 선택해주세요.\n 1. 예금\n 2. 적금\n 3. 입출금\n 4. 뒤로가기\n");
-        System.out.println("\n 🧼 --------------------------------- 🧼 ");
+        System.out.println(" 🧼 ------------------------------------------ 🧼 ");
     }
 
 
@@ -132,6 +132,7 @@ public class CreateAccountLJH extends Account  {
                         } break;
                     } catch (NumberFormatException e) {
                         System.out.println("⁉️ 숫자를 입력해주세요");
+                        createTransfer(user);
                     }
                 } break;
             } break;
@@ -155,7 +156,7 @@ public class CreateAccountLJH extends Account  {
             }
 
             System.out.println("초기 납입 금액은 10만원부터 자유롭게 가능합니다.\n");
-            Thread.sleep(1200);
+            Thread.sleep(1000);
             System.out.println("\n초기 납입 금액을 설정합니다. 뒤로가기는 0번을 눌러주세요.");
 
             long transferBalance = getTransferBalance(user);
@@ -214,6 +215,7 @@ public class CreateAccountLJH extends Account  {
             }
         } catch (NumberFormatException e) {
             System.out.println("⁉️ 숫자를 입력해주세요");
+            createSaving(user);
         } catch (InterruptedException e) {
             System.out.println("처리중 입니다 . . . . .");
         }
@@ -239,7 +241,7 @@ public class CreateAccountLJH extends Account  {
             }
 
             System.out.println("초기 납입 금액은 10만원부터 자유롭게 가능합니다.\n");
-            Thread.sleep(1200);
+            Thread.sleep(1000);
             System.out.println("\n초기 납입 금액을 설정합니다. 뒤로가기는 0번을 눌러주세요.");
 
             long transferBalance = getTransferBalance(user);
@@ -299,6 +301,7 @@ public class CreateAccountLJH extends Account  {
             }
         } catch (NumberFormatException e) {
             System.out.println("⁉️ 숫자를 입력해주세요");
+            createFixed(user);
         } catch (InterruptedException e) {
             System.out.println("처리중 입니다 . . . . .");
         }
