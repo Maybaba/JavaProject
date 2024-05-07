@@ -1,6 +1,3 @@
-<img width="802" alt="image" src="https://github.com/BankProject7777777/seseseBank/assets/161430857/d67a158b-e0fd-45c0-a6bd-bd0314197d5b"><img width="887" alt="image" src="https://github.com/BankProject7777777/seseseBank/assets/161430857/9d6321b0-6274-4a27-ac67-4404fc4ca0bf"><img width="610" alt="image" src="https://github.com/BankProject7777777/seseseBank/assets/161430857/2640cec7-a156-4c5f-b904-ba68859a100d"><img width="548" alt="image" src="https://github.com/BankProject7777777/seseseBank/assets/161430857/064b1c95-d729-4a22-b278-41420a0f6486"><h1></h1>
-<div align ="center"><br>
-  
 # ### SeSeSe Bank ### ###
 <br></div>
 
