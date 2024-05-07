@@ -140,7 +140,7 @@ public class CreateAccountLJH extends Account  {
     }
 
     public static void createSaving(User user) throws InterruptedException {
-        try {
+        try { // 적금계좌를 보유한지 확인
             if (userHasAccountOfType(user, AccountType.SAVING)) {
                 System.out.println("\n⁉️ 이미 생성된 적금 계좌가 있습니다.");
                 Thread.sleep(1000);
@@ -148,6 +148,7 @@ public class CreateAccountLJH extends Account  {
                 return;
             }
 
+            // 다른 클래스에서 생성한 타입을 받아 입출금 계좌를 보유하고 있는지 확인
             if (!userHasAccountOfType(user, AccountType.TRANSFER)) {
                 System.out.println("\n⁉️ 입출금 계좌가 필요합니다.\n\n");
                 Thread.sleep(1200);
@@ -155,6 +156,7 @@ public class CreateAccountLJH extends Account  {
                 return;
             }
 
+            // 초기 납입 금액 설정하는 기능
             System.out.println("초기 납입 금액은 10만원부터 자유롭게 가능합니다.\n");
             Thread.sleep(1000);
             System.out.println("\n초기 납입 금액을 설정합니다. 뒤로가기는 0번을 눌러주세요.");
@@ -163,24 +165,26 @@ public class CreateAccountLJH extends Account  {
             long firstDepositSav;
 
             while (true) {
-                firstDepositSav = Long.parseLong(input("\r금액을 입력해주세요.\n □▫∙︎ ︎ ").replace(" ", ""));
-                if (firstDepositSav == 0) {
+                // 초기 납입 금액을 사용자로 부터 설정받아 변수에 입력
+                firstDepositSav = Long.parseLong(input("\r금액을 입력해주세요.\n □▫∙︎ ︎ ").replace(" ", "")); // 공백입력을 삭제시키기
+                if (firstDepositSav == 0) { // 나가기
                     createView();
                     return;
                 }
 
                 String doubleCheck = input(firstDepositSav + "원을 입금하시려면 [y]를 뒤로가기는 [n]을 입력해주세요.\n □▫∙︎ ︎ ");
-                if (doubleCheck.equals("y")) {
+                if (doubleCheck.equals("y")) {  // y를 눌러 계속 진행 할 경우
                     if (firstDepositSav < 100000 || firstDepositSav > transferBalance) {
                         System.out.println("⁉️ 잔고가 부족하거나 10만원 미만의 금액입니다. 취소는 숫자 0을 눌러주세요.");
                         continue;
                     }
 
-                    int savingPassword = askForPassword();
-                    String accountNum = generateAccountNumber();
+                    int savingPassword = askForPassword(); // 비밀번호 숫자로만 4자리 입력받아 변수에 입
+                    String accountNum = generateAccountNumber(); // 랜덤한 계좌번호 숫자를 생성하여 변수에 입력
+
+                    // 계좌 객체 생성
                     Account savingAccount = new Account(0, user, savingPassword, AccountType.SAVING, accountNum, firstDepositSav);
 
-                    withdrawFromTransfer(user, firstDepositSav);
                     savingAccount.setBalance(firstDepositSav);
                     // 초기납입금액 설정
                     savingAccount.setInitialDepositBalance(firstDepositSav);
@@ -199,6 +203,8 @@ public class CreateAccountLJH extends Account  {
                         System.out.println("처리중 입니다 . . . . .");
                     }
 
+                    // 회원의 계정에 생성된 적금 객체를 추가
+                    // 현재 생성된 계좌에 대한 정보를 보여줌
                     user.getMyAccount().add(savingAccount);
                     System.out.println("     계좌번호 : " + savingAccount.getAccountNum());
                     System.out.println("     현재잔액 : " + savingAccount.getBalance() + "원");
@@ -215,7 +221,7 @@ public class CreateAccountLJH extends Account  {
             }
         } catch (NumberFormatException e) {
             System.out.println("⁉️ 숫자를 입력해주세요");
-            createSaving(user);
+            createSaving(user);  // 다시 돌아가는 기능
         } catch (InterruptedException e) {
             System.out.println("처리중 입니다 . . . . .");
         }
