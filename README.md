@@ -1,8 +1,9 @@
-# ### SeSeSe Bank ### ###
+# SeSeSe Bank ### 
 <br></div>
 
 <div align ="right"><b>7조 김은지 임제훈 김한솔 박진우 신윤종</b></div>
 
+organization : https://github.com/BankProject7777777
 
 ---
 ## 목차
